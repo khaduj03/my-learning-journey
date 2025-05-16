@@ -1,0 +1,15 @@
+.box{
+     width: 400px;
+     height: 400px;
+     background:radial-gradient( circle at 400px 0px , green, yellow, blue);
+}
+.bo{
+     width: 400px;
+     height: 400px;
+     background: repeating-linear-gradient(to right ,yellow 0,blue 20%);
+}
+.m{
+     width: 400px;
+     height: 400px;
+     background: repeating-radial-gradient(circle ,yellow 0,blue 30px );
+}

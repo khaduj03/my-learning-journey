@@ -1,0 +1,29 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body{
+     text-align: center;
+     font-size: 30px;
+}
+.header{
+     height: 80px;
+     background-color: rgb(255, 217,102);
+}
+.article{
+     height: 200px;
+     width: 75%;
+     float: left;
+     background-color: rgb(107, 107, 207);
+}
+.sidbar{
+     height: 200px;
+     width: 25%;
+     float: right;
+     background-color: rgb(109, 76, 139);
+}
+.footer{
+     height: 80px;
+     background-color: rgb(50, 161, 161);
+}

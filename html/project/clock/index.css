@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #103255;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clock{
+    display: flex;
+    width: 500px;
+    height: 300px;
+    background-color: aqua;
+}
+
+
+
+
+.clock, .minut, .secone {
+        margin: 20px;
+        height:60px;
+        width:60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 4px 4px 6px -1px rgba(0,0, 0, 0.2),
+                    inset  -4px -4px 6px -1px rgba(255,255, 255, 0.7),
+                    -0.5px -0.5px 0px rgba(255,255, 255, 1),
+                    0.5px -0.5px 0px rgba(0,0, 0, 0.15),
+                    0px 12px 10px -10px rgba(0,0, 0, 0.5);
+    }
+#minute-circle {
+    background-color: white;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.2))
+            drop-shadow(-4px -4px 6px rgba(255, 255, 255, 0.7))
+            drop-shadow(-0.5px -0.5px 0px rgba(255, 255, 255, 1))
+            drop-shadow(0.5px -0.5px 0px rgba(0, 0, 0, 0.15))
+            drop-shadow(0px 12px 10px -10px rgba(0, 0, 0, 0.5));
+}
+
+circle {
+    fill: none;
+}

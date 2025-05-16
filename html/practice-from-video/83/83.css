@@ -1,0 +1,39 @@
+.container::before{
+      content:"milad";
+      background-color: red;
+      display:block;
+      height: 100px;
+      text-align: center;
+      color: #fff;
+}
+.container::after{
+     content:"milad";
+     background-color:green;
+     display:block;
+     height: 100px;
+     text-align: center;
+     color: #fff;}
+
+.box1{
+     height: 80px;
+     background-color: gray;
+     margin: 5px;
+}
+p::first-letter{
+     color: red;
+     font-size: 100px;
+
+}
+#p1::first-line{
+     color: red;
+     font-size: 70px;
+}
+#p1::selection{
+     background-color: black;
+     color: #fff;
+
+}
+#p1::marker{
+     color: red;
+     font-size: 23px;
+}

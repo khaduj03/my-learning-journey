@@ -1,0 +1,43 @@
+.contaner{
+     display:flex;
+     flex-direction: row-reverse;
+}
+.ff,.cc,.ss,.xx,.aa{
+     width: 100px;
+     height: 100px;
+     background-color: blueviolet;
+     margin: 10px;
+
+}
+.box{
+     width: 300px;
+     height: 300px;
+     background-color: brown;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     animation: 2s infinite gg linear;
+}
+.o1{
+     width: 200px;
+     height: 200px;
+     background-color: blue;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     animation: 3s infinite gg linear;
+}
+.o2{
+     width: 100px;
+     height: 100px;
+     background-color: blueviolet;
+     animation: 5s infinite gg linear;
+}
+@keyframes gg{
+     from{
+               transform:rotate(10deg);
+          }
+     to{
+               transform:rotate(360deg);
+          }
+     }

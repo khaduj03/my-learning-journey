@@ -1,0 +1,103 @@
+#d1{
+     text-align: center; 
+     text-shadow: 4px 9px 15px;
+     margin: auto;
+}
+body{
+     background-color: rgb(201, 183, 183);
+}
+.block1{
+     display:inline-block;
+     margin: auto;
+     
+}
+.b1,.b2,.b3,.b4,.b5{
+     display: inline-block;
+     width: 200px;
+     height: 200px;
+     background-image: url(ww.jpg);
+     background-position: center;
+     background-size: 100%;
+     border-radius: 15%;
+     box-shadow: 0px 0px 10px rgb(121, 110, 110);
+
+}
+.b1:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b2:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b3:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b4:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b5:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.s1,.s2,.s3,.s4,.s5{
+     width: 200px;
+     height: 40px;
+     background-color: rgb(106, 54, 54);
+     display: inline-block;
+     border-radius: 15px;
+}
+.b21,.b22,.b23,.b24,.b25{
+     display: inline-block;
+     width: 200px;
+     height: 200px;
+     background-image: url(ww.jpg);
+     background-position: center;
+     background-size: 100%;
+     border-radius: 15%;
+     box-shadow: 0px 0px 10px rgb(121, 110, 110);
+
+}
+.b21:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b22:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b23:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b24:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.b25:hover{
+     width: 190px;
+     height: 190px;
+     box-shadow: 0px 0px 30px rgb(121, 110, 110);
+}
+.s11,.s12,.s13,.s14,.s15{
+     width: 200px;
+     height: 40px;
+     background-color: rgb(106, 54, 54);
+     display: inline-block;
+     border-radius: 15px;
+
+
+
+ 
+

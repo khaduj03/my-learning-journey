@@ -1,0 +1,16 @@
+<DOVTYPE html>
+<head>
+     <title></title>
+     <body bgcolor="">
+          <div>
+               <span style="background-color: rgb(90, 46, 90); color: aliceblue; ">coding</span>
+          </div>
+          <div>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima aliquid blanditiis dignissimos tempora omnis, veniam nobis exercitationem saepe dolorem aspernatur in dolore earum natus eum. Porro consectetur odit laborum quisquam.
+          </div>
+          <div>
+               <span style="background-color: #ff7; color: teal;">code </span>
+          </div>
+          <video src="one.mp4m" width="200" controls type="video"></video>
+     </body>
+</head>

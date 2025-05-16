@@ -1,0 +1,23 @@
+th,td{
+     border: 1px solid gray;
+     padding: 15px;
+}
+table{
+     border-collapse: collapse;
+     width:100%;
+}
+tr:nth-child(even){
+     background-color: rgb(239, 237, 237);
+}
+tr:hover{
+     background-color: #ddd;
+}
+th{
+     background-color:#04aa6d;
+}
+p{
+     width: 300px;
+     height: 400px;
+     background-color: lightgrey;
+     overflow: auto;
+}

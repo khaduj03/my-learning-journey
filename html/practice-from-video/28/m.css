@@ -1,0 +1,43 @@
+body{
+     background-color: lightgray;
+     font-family: sans-serif;
+}
+.father{
+     width: 500px;
+     height: 400px;
+     background-color: #fff;
+     display: inline-block;
+     
+     
+}
+.pa1{
+     width: 80px;
+     height: 50px;
+     display: inline-block;
+}
+.pa2{
+     width: 80px;
+     height: 50px;
+     display:inline-block ;
+}
+.pa3{
+     width: 80px;
+     height: 50px;
+     display: inline-block;
+}
+.ma{
+     display:block;
+     margin: auto;
+     border-radius: 50%;
+}
+.social{
+     background-color: lightgray;
+     display:block;
+     text-align: center;
+}
+.title{
+     text-align: center;
+}
+.desc{
+     text-align: center;
+}

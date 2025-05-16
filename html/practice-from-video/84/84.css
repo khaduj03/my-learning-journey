@@ -1,0 +1,49 @@
+.header{
+     height: 80px;
+     background-color: orange;
+}
+.article{
+     width: 75%;
+     height: 200px;
+     background-color: pink;
+     float: left;
+}
+.sidebar{
+     width: 25%;
+     height: 200px;
+     background-color: green;
+     float: right;
+}
+#foter{
+     height: 80px;
+     background-color: blue;
+}
+.container::after{
+     content: "";
+     display: block;
+     clear: both;
+     background-color: blue;
+}
+.header1{
+     height: 80px;
+     background-color: orange;
+}
+.article1{
+     width: 75%;
+     height: 200px;
+     background-color: pink;
+     float: left;
+}
+.sidebar1{
+     width: 25%;
+     height: 200px;
+     background-color: green;
+     float: right;
+}
+#foter1{
+     height: 80px;
+     background-color: blue;
+}
+.container1{
+     display: flow-root;
+}

@@ -1,0 +1,122 @@
+.hh{
+     width: 100px;
+     height: 100px;
+     background-color: blueviolet;
+     animation-duration: 2s;
+     animation-iteration-count: infinite;
+     animation-name: dd;
+     animation-direction: alternate;
+     
+}
+@keyframes dd{
+     0%{
+          transform: translatex(400px);
+     }
+     100%{
+          transform: translateX(70px);
+     }
+
+}
+.jj{
+     width: 100px ; height: 100px;
+     background-color: blue;
+     animation-name: move;
+     animation-duration: 3s;
+     animation-iteration-count: infinite;
+     animation-direction: alternate;
+
+}
+.jj:hover{
+     animation-play-state: paused;
+
+}
+@keyframes move{
+     100%{
+          transform: translate(200px);
+     }
+}
+.gg{
+     width: 100px; height: 100px;
+     background-color: blueviolet;
+     animation-duration: 3s;
+     animation-name: hh;
+     animation-delay: 2s;
+     animation-fill-mode: backwards;
+
+}
+@keyframes hh{
+     0%{
+          background-color: yellow;
+     }
+     100%{
+          background-color: brown;
+     }
+}
+.aa{
+     width: 100px;
+     height: 100px;
+     background-color: blue;
+     animation: 3s hh 2s backwards ;
+}
+.loder{
+     height: 100px;
+     width: 100px;
+     border: 16px solid gray;
+     border-top: 16px solid  blue;
+     border-radius: 50%;
+     animation: 1s linear gg infinite;
+}
+@keyframes gg{
+     0%{
+          transform: rotate(0deg);
+     }
+     100%{
+          transform: rotate(360deg);
+     }
+}
+.loderr{
+     height: 100px;
+     width: 100px;
+     border: 16px solid gray;
+     border-top: 16px solid  blue;
+     border-radius: 50%;
+     animation: 1s linear gg infinite;
+     border-top-color: transparent;
+}
+@keyframes gg{
+     0%{
+          transform: rotate(0deg);
+     }
+     100%{
+          transform: rotate(360deg);
+     }
+}
+.ff{
+     width: 100px;
+     height: 100px;
+     border: 16px solid gray ;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-top-color: transparent;
+     animation: 2s bb linear  infinite;
+
+}
+.child{
+     width: 60px;
+     height: 60px;
+     border: 10px solid black;
+     border-radius: 50%;
+     border-top-color: transparent;
+     animation: 0.6s bb linear reverse infinite;
+
+}
+@keyframes bb{
+     from{
+          transform: rotate(0deg);
+     }
+     to{
+          transform: rotate(360deg);
+     }
+}

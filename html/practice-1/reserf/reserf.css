@@ -1,0 +1,13 @@
+.one{
+     background-image: url(../tt.webp);
+     background-repeat: no-repeat;
+     background-position: center;
+     width: 500px;
+     height: 600px;
+     border-radius: 15px;
+     margin: auto;
+     margin-top: 50px;
+}
+body{
+     background-color: rgb(179, 179, 241);
+}

@@ -1,0 +1,102 @@
+.dd{
+     width: 100px;
+     height: 100px;
+     background-color: blueviolet;
+     transition: 1s;
+     margin: auto;
+     
+}
+.dd:hover{
+     transform:scale(-1);
+}
+.yy{
+     width: 200px;
+     height: 100px;
+     background-color: brown;
+     transition: 1s;
+     margin: auto;
+}
+.yy:hover{
+     transform:rotate(30deg);
+     background-color: blue;
+}
+.rr{
+     width: 150px;
+     height: 150px;
+     background-color: aqua;
+     transform: skewX(20deg);
+}
+.ee{
+     width: 120px;
+     height: 120px;
+     background-color: blue;
+     transition-property: width,background-color;
+     transition-duration: 2s ,10s;
+}
+.ee:hover{
+     width: 300px;
+     background-color: aquamarine;
+}
+.uu{
+     width: 100px;
+     height: 100px;
+     background-color: blueviolet;
+     transition: 2s;
+}
+.uu{
+     transition-timing-function:ease-out;
+}
+.uu:hover{
+     transform: translate(500px);
+}
+.jj{
+     width: 100px;
+     height: 100px;
+     background-color: red;
+     transition-duration: 6s;
+     animation-name:changecolor ;
+     animation-duration:7s;
+     animation-iteration-count: infinite;
+}
+@keyframes changecolor{
+     0%{
+          background-color: red;
+     }
+     20%{
+          background-color: blue;
+     }
+     40%{
+          background-color: green;
+     }
+     100%{
+          background-color: black;
+     }
+
+}
+.ff{
+     width: 400px;
+     height: 400px;
+     animation-name:chamge ;
+     animation-duration:20s;
+     background-color:green;
+     animation-iteration-count: infinite;
+     
+}
+@keyframes chamge{
+     0%{
+          background-color: black;
+     }
+     20%{
+          background-color: red;
+     }
+     30%
+     {
+          background-color: green;
+     }
+     50%{
+          background-color: blue;
+     }
+     70%{
+          background-color: aqua;
+     }
+}

@@ -1,0 +1,12 @@
+a{
+     background-color: blue;
+     font-size: 30px;
+     margin-left: 50px;
+     display: block;
+}
+span{
+     background-color: brown;
+     margin-left: 20px;
+     margin-right: 20px;
+     margin-top: 50px;
+}

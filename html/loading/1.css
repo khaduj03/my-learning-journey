@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,400;1,500;1,600&display=swap');
+*{
+     font-family: 'Poppins', sans-serif;
+     margin: 0;
+     padding: 0;
+}
+body {
+     background-color: whitesmoke;
+    }
+    
+    .loader {
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     width: 100vw;
+    }
+    
+    .circle {
+     position: absolute;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     animation: scaleUp 2s infinite ease-in-out;
+     box-shadow: 0 0 20px rgba(140, 39, 150, 0.5);
+    }
+    
+    .circle-1 {
+     background-color:rgb(106, 56, 153);
+     animation-delay: 0s;
+    }
+    
+    .circle-2 {
+     background-color:rgb(89, 39, 136);
+     animation-delay: 0.3s;
+    }
+    
+    .circle-3 {
+     background-color: rgb(57, 14, 97);
+     animation-delay: 0.6s;
+    }
+    
+    .circle-4 {
+     background-color: rgb(85, 10, 155);
+     animation-delay: 0.9s;
+    }
+    
+    @keyframes scaleUp {
+      0% {
+        transform: scale(-1);
+     }
+      50% {
+        transform: scale(3);
+     }
+      100% {
+        transform: scale(1.5);
+     }
+    }
+    
+    p {
+     position: absolute;
+     font-size: 20px;
+     color: white;
+     margin-top: 50px;
+     position: relative;
+     bottom: 25px;
+     font-weight: bold;
+
+    }
+

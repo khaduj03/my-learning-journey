@@ -1,0 +1,22 @@
+P{
+     width: 150px;
+     height: 50px;
+     background-color: aliceblue;
+     overflow: hidden;
+     animation: 4s infinite steps(20) mm;
+     font-size: 30px;
+}
+@keyframes mm{
+     0%{
+          width: 0px;
+     }
+     20%{
+          width: 25px ;
+     }
+     50%{
+          width: 50px;
+     }
+     100%{
+          width: 150px;
+     }
+}

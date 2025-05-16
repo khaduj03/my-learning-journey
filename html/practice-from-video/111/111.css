@@ -1,0 +1,14 @@
+div{
+     width: 500px;
+     height: 500px;
+     background: url(20221031_152502.jpg);
+     background-size: cover;
+     position: relative;
+
+}
+
+img{
+     width: 380px;
+     height: 380px;
+     mix-blend-mode: difference;
+}

@@ -1,0 +1,58 @@
+*{
+     margin: 0;
+     padding: 0;
+}
+body{
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.contaner{
+     background-color: aqua;
+     height: 400px;
+     width: 900px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.circle_1,.circle_2,.circle_3,.circle_4,.circle_5,.circle_6{
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     animation: linear load infinite;
+}
+.circle_1{
+     background-color: gray;
+     animation-duration:2s;
+     animation-delay:4s ;
+}
+.circle_2{
+     background-color: rgb(177, 169, 169);
+     animation-duration:4s;
+     animation-delay:2s ;
+}
+.circle_3{
+     background-color: rgb(236, 216, 216);
+}
+.circle_4{
+     background-color: gray;
+
+}
+.circle_5{
+     background-color: rgb(177, 169, 169);
+
+}
+.circle_6{
+     background-color: rgb(236, 216, 216);
+}
+@keyframes  load {
+     0%{
+          width: 10px;
+          height: 10px;
+     }
+     100%{
+          width: 50px;
+          height: 50px;
+     }
+}

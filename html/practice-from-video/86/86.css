@@ -1,0 +1,8 @@
+p:first-child{
+     background-color:black;
+     color: pink;
+}
+p:nth-child(){
+     background-color: black;
+     color: aliceblue;
+}

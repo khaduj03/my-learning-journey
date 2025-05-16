@@ -1,0 +1,76 @@
+a{
+     text-decoration: none;
+     background-color: blueviolet;
+     color: beige;
+     font-size: 35px;
+     padding: 15px;
+     display: inline-block;
+     border-radius: 10px;
+
+}
+a:hover{
+     background-color: rgb(152, 139, 164);
+     color: black;
+     font-size: 37px;
+}
+a:active{
+     background-color: rgb(201, 201, 16);
+}
+a:visited{
+     background-color: brown;
+}
+.cont{
+     width: 200px;
+     height: 100px;
+     background-color: lightgray;
+     direction:rtl;
+}
+.cont div{
+     display: inline-block;
+     
+}
+.child1{
+     width: 45px;
+     height: 100px;
+     background-color: brown;
+}
+.child2{
+     width: 45px;
+     height: 100px;
+     background-color: rgb(13, 165, 112);
+}
+.child3{
+     width: 45px;
+     height: 100px;
+     background-color: rgb(42, 128, 165);
+}
+.child4{
+     width: 45px;
+     height: 100px;
+     background-color: rgb(165, 157, 42);
+}
+.di{
+     background-color: blue;
+}
+span{
+     background-color: brown;
+}
+.dii{
+     background-color: aquamarine;
+     padding: 10px;
+     margin: 10px 0px;
+     border-radius: 10px;
+
+}
+.sp{
+     font-size: 25px;
+     background-color: rgb(7, 94, 65);
+     text-transform: uppercase;
+     border-radius: 10px;
+}
+#p1,#p2{
+     background-color: rgb(213, 205, 205);
+     width: 100px;
+     display: inline;
+
+}

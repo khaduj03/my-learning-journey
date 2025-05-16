@@ -1,0 +1,23 @@
+.smile{
+
+}
+.eye{
+     width: 20px;
+     height: 20px;
+     background-color: black;
+     border-radius: 50%;
+     margin: auto;
+     display: block;
+     margin-top:100px;
+     box-shadow: 60px 0,
+
+
+     30px 90px 0 -5px,
+     10px 90px 0 -5px ,
+     -8px 85px 0px -5px 
+     
+     
+     
+     ;
+
+}

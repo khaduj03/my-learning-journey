@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>loading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+            <svg height="100" width="100">
+                <defs>
+                    <linearGradient id="hour-gradient-0" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="20%" style="stop-color:rgb(20, 128, 130)" />
+                        <stop offset="60%" style="stop-color:rgb(49, 198, 227)" />
+                    </linearGradient>
+                </defs>
+                <circle id="hour-circle" cx="50" cy="50" r="30" stroke-width="4" />
+                <text id="hour-text" x="50" y="55" text-anchor="middle" alignment-baseline="middle" fill="#ddd" font-size="30">0</text>
+            </svg>
+        </div>
+        <div class="minut">
+            <svg height="100" width="100">
+                <defs>
+                    <linearGradient id="minute-gradient-0" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="20%" style="stop-color:rgb(32, 204, 207)" />
+                        <stop offset="60%" style="stop-color:rgb(49, 198, 227)" />
+                    </linearGradient>
+                </defs>
+                <circle id="minute-circle" cx="50" cy="50" r="30" stroke-width="4" />
+                <text id="minute-text" x="50" y="55" text-anchor="middle" alignment-baseline="middle" fill="#fff" font-size="30">0</text>
+            </svg>
+        </div>
+        <div class="secone">
+            <svg height="100" width="100">
+                <defs>
+                    <linearGradient id="second-gradient-0" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="20%" style="stop-color:rgb(139, 252, 254)" />
+                        <stop offset="60%" style="stop-color:rgb(18, 122, 142)" />
+                    </linearGradient>
+                </defs>
+                <circle id="second-circle" cx="50" cy="50" r="30" stroke-width="4" />
+                <text id="second-text" x="50" y="55" text-anchor="middle" alignment-baseline="middle" fill="#fff" font-size="30">0</text>
+            </svg>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let hour = document.getElementById("hour-circle");
+            let hourText = document.getElementById("hour-text");
+            let minute = document.getElementById("minute-circle");
+            let minuteText = document.getElementById("minute-text");
+            let second = document.getElementById("second-circle");
+            let secondText = document.getElementById("second-text");
+
+            function updateClock() {
+                let currentTime = new Date();
+                let hours = currentTime.getHours();
+                let minutes = currentTime.getMinutes();
+                let seconds = currentTime.getSeconds();
+
+                // Update color based on time
+                hour.style.stroke = `url(#hour-gradient-${Math.floor(hours / 360)})`;
+                minute.style.stroke = `url(#minute-gradient-${Math.floor(minutes / 360)})`;
+                second.style.stroke = `url(#second-gradient-${Math.floor(seconds / 360)})`;
+
+                // Calculate stroke-dasharray for each hand
+                let hourProgress = (hours % 12) / 12 * 2 * Math.PI * 30;
+                let minuteProgress = minutes / 60 * 2 * Math.PI * 30;
+                let secondProgress = seconds / 60 *2 * Math.PI * 30;
+
+                // Apply stroke-dasharray
+                hour.style.strokeDasharray = `${hourProgress} ${2 * Math.PI * 22}`;
+                minute.style.strokeDasharray = `${minuteProgress} ${2 * Math.PI * 16}`;
+                second.style.strokeDasharray = `${secondProgress} ${2 * Math.PI * 10}`;
+
+                // Update text content
+                hourText.textContent = hours.toString().padStart(2, '0');
+                minuteText.textContent = minutes.toString().padStart(2, '0');
+                secondText.textContent = seconds.toString().padStart(2, '0');
+            }
+
+            // Update the clock every second
+            setInterval(updateClock, 1000);
+        });
+    </script>  
+</body>
+</html>
