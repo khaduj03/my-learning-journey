@@ -1,0 +1,205 @@
+What is "this"?
+In JavaScript, "this" is a special word that points to something. Think of it like a finger
+ that points to an object or thing.
+Imagine you are pointing to yourself and saying, “This is me!” But when you’re pointing
+at your toy, you’re saying, “This is my toy!” So, "this" changes depending on what you're
+pointing to. In JavaScript, it works the same way!
+
+
+Examples:
+1. Inside an Object (When "this" is in a method):
+Let’s say you have a toy robot. The robot has a name and can say its name. 
+Here's how that looks in JavaScript:
+
+const robot = {
+  name: "Robo",
+  sayName: function() {
+    return this.name;
+  }
+};
+In this case, "this" is pointing to the robot.
+When the robot says its name, "this" knows it’s talking about the robot itself.
+So, it will say "Robo."
+
+---
+
+2. Alone (When "this" is by itself):
+Imagine you're standing all alone in the playground, and you shout, 
+“This is fun!” You’re not pointing at anyone specific; you're just talking about 
+the whole playground. In JavaScript, "this" points to the big space we call the global object.
+
+let x = this;
+In the playground (the browser), "this" is pointing to the entire world around you,
+called the window.
+
+---
+
+3. In a Function (Without strict mode):
+Imagine if you had a magical power, and every time you said "this," 
+you could point to everything around you. In JavaScript, 
+when "this" is in a normal function (not in an object), 
+it points to the big playground—the global object (or the window).
+
+function myFunction() {
+  return this;
+}
+---
+
+4. Strict Mode (When you're very careful):
+But sometimes, we want to be super careful about what we're pointing to. 
+This is like putting on special glasses that make sure "this" 
+only points to what we tell it to. If we don't tell "this" where to point, 
+it won’t point to anything! That’s called "strict mode."
+
+"use strict";
+function myFunction() {
+  return this; // this is now undefined because we didn't tell it where to point!
+}
+---
+
+5. In an Event (When something happens):
+When you click on a button, it’s like saying "this" is the button. 
+So, "this" will point to the button you clicked.
+
+<button onclick="this.style.display='none'">Click me!</button>
+In this example, "this" points to the button because it’s the button 
+that is doing something (getting clicked!).
+
+---
+
+Important Things:
+- "this" is a keyword, not a variable. You can't change it like a normal variable.
+- "this" changes depending on where and how you use it.
+
+---
+
+Borrowing Functions (When one thing takes from another):
+Sometimes, one robot might borrow another robot's ability. 
+So, let's say one robot can say its name, and another robot can borrow that ability using bind.
+
+const person = {
+  firstName: "John",
+  fullName: function () {
+    return this.firstName;
+  }
+};
+
+const member = {
+  firstName: "Hege",
+};
+
+let borrowedName = person.fullName.bind(member);
+console.log(borrowedName()); // "Hege"
+---
+
+Priority of "this":
+
+Imagine different kids are calling your name, and you decide who to listen to first 
+based on how loud they are calling. JavaScript does the same with "this":
+
+1. bind() - The loudest call! "this" listens to the one that binds it.
+2. apply() and call() - Second loudest. These methods tell "this" where to point.
+3. Object Method - When "this" is inside an object (like a robot), it points to that object.
+4. Global Scope - If no one is calling, "this" just points to the whole playground 
+(the global object).
+
+
+
+
+### 1. **bind()** (Highest Priority)
+- bind() "glues" the value of this to a specific object, 
+no matter how or where the function is called. 
+-permanently setsts** what this will refer to.
+
+  Example:
+ 
+  const person = { name: 'Alice' };
+  
+  function sayName() {
+    return this.name;
+  }
+
+  const boundSayName = sayName.bind(person);
+  console.log(boundSayName());  // Always 'Alice', even if called elsewhere
+
+
+
+
+  
+### 2. **`apply() and call()**
+- These two methods can **temporarily** change the value of this when calling a function.
+- The difference between apply() and call() is how arguments are passed:
+  - apply() uses an array of arguments.
+  - call() takes arguments one by one.
+
+  Example:
+  ``javascript
+  const person1 = { name: 'Alice' };
+  const person2 = { name: 'Bob' };
+
+  function sayName() {
+    return this.name;
+  }
+
+  console.log(sayName.call(person1)); // 'Alice' (used call())
+  console.log(sayName.apply(person2)); // 'Bob' (used apply())
+ 
+
+### 3. **Object Method**
+- When a function is **inside an object** (like a method), `this` refers to the object itself.
+  
+  Example:
+  
+javascript
+  const car = {
+    brand: 'Toyota',
+    getBrand: function() {
+      return this.brand;
+    }
+  };
+
+  console.log(car.getBrand()); // 'Toyota', because this is the car object
+ 
+
+### 4. **Global Scope** (Lowest Priority)
+- When `this` is used **outside** of any object or function, 
+it refers to the **global object** (the window in browsers).
+  
+  Example:
+  
+javascript
+  function saySomething() {
+    return this;  // In browsers, this is the window object
+  }
+
+  console.log(saySomething()); // Will log the gArrow Functionsw)
+ 
+
+### 5. **Arrow Functions**
+- In **arrow functions**, `this` behaves differently. 
+It **doesn't create its own `this`**, it just keeps the `this` value from the surrounding code.
+  
+  Example:
+  
+javascript
+  const obj = {
+    name: 'Charlie',
+    greet: () => {
+      console.log(this.name);
+    }
+  };
+
+  obj.greet();  // In arrow functions, this is not the object, it refers to the global scope!
+ 
+
+---
+
+### So, what's the order (Precedence) to decide `this`?
+
+1. **If `bind()` is used,** it fixes the value of `this` permanently.
+2. **If `call()` or `apply()` is used,** `this` changes based on the object they pass.
+3. **If a method is inside an object,** `this` refers to the object itself.
+4. **If none of the above, `this` refers to the global object** (in a browser, it's the `window`
+).
+---------------------------------------------------------------------------------------------
+

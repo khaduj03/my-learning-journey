@@ -1,0 +1,539 @@
+### What are Objects?
+In JavaScript, objects are like toy boxes. 
+Imagine a toy box where you put your favorite toys. 
+Each toy has a name and a special characteristic (or property). 
+For example, you might have:
+
+- A red car (car is the name, red is the color)
+- A blue ball (ball is the name, blue is the color)
+
+In JavaScript, we also have toy boxes, 
+but we call them objects, and instead of toys, 
+they store information. For example, we can create a 
+box for a person and store their name, age, and eye color:
+
+const person = {
+  firstName: "John",   // Name of the person
+  lastName: "Doe",     // Last name of the person
+  age: 50,             // Age of the person
+  eyeColor: "blue"     // Eye color of the person
+};
+
+
+### Properties
+In our object (toy box), properties are the special things 
+or details about the object. For example, in the person object:
+
+- firstName is "John"
+- age is 50
+
+These are called properties. It's like saying:
+- "My car is red."
+- "The person’s first name is John."
+
+### How to Create an Object?
+There are many ways to make a toy box (object). 
+The easiest way is like this:
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+Now, you have an object with all the information.
+
+Another way is like building the toy box step by step:
+
+const person = {};
+person.firstName = "John";
+person.lastName = "Doe";
+person.age = 50;
+person.eyeColor = "blue";
+You first make an empty box {} and then add toys (information) one by one.
+
+### Methods
+Objects can also have methods, 
+which are like special actions or functions they can do. 
+For example, let’s make the person say their full name:
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+Here, the person has a method (an action) called fullName. 
+It combines (joins) the first name and last name and gives us "John Doe."
+
+### Objects are Mutable
+Now, here’s something cool but tricky. 
+When you have a toy box (object) and give it to a friend 
+(let’s call the box person and the friend x):
+
+const x = person;
+Both person and x are the SAME box. So, if x changes something inside, 
+it will also change in person:
+
+x.age = 10;  // x changes the age
+Now, person will also have the age 10 because x and person are sharing the same box!
+
+### Example with a Car Object
+
+Let’s make another example, but this time with a car!
+
+const car = {
+  brand: "Toyota",    // Car brand
+  color: "red",       // Car color
+  speed: 100,         // Car speed in km/h
+  drive: function() {
+    return "The car is driving at " + this.speed + " km/h.";
+  }
+};
+Here, the car object has:
+- A brand (Toyota),
+- A color (red),
+- A speed (100 km/h),
+- And an action (method) called drive, which tells us how fast the car is going!
+
+Now, if we use the drive method:
+
+car.drive();  // It will say: "The car is driving at 100 km/h."
+
+-------------------------------------------------------------------
+### What is a Property in JavaScript?
+Imagine you have a toy box. Inside the toy box, 
+there are different toys. Each toy has things about it that we can talk about, 
+like its color, size, and type.
+
+In JavaScript, properties are like those things that tell us more about the toys. 
+For example, if the toy is a car, the color, size, and type are its properties.
+
+Let’s say we have an object called toyCar. 
+It has a color, size, and type. Here’s how we write it in JavaScript:
+
+const toyCar = {
+  color: "red",  // the color is red
+  size: "small", // the size is small
+  type: "race car"  // the type is race car
+};
+Now, if we want to know what color the car is, 
+we can ask the toyCar for its color property like this:
+
+console.log(toyCar.color);  // This will give us "red"
+
+
+
+### Ways to Access Properties
+There are three ways to get the properties (like asking what color a car is):
+
+1. Dot notation: You use a dot (.) between the object name and the property.
+  
+   toyCar.color  // gives us "red"
+   
+2. Bracket notation: You can use brackets and write the property inside quotes.
+  
+   toyCar["color"]  // gives us "red"
+   
+3. Using variables: You can store the property name in a variable 
+and use it to get the property.
+  
+   let prop = "color";
+   toyCar[prop];  // gives us "red"
+   
+
+#### Example 1: Adding New Properties
+You can add a new property to your toy car, like adding a new sticker to your car toy!
+
+toyCar.speed = "fast";  // Now the car has a new property called speed!
+console.log(toyCar.speed);  // This will give us "fast"
+
+
+
+#### Example 2: Deleting Properties
+What if we don’t want the size property anymore? We can delete it.
+
+delete toyCar.size;
+console.log(toyCar.size);  // Now, size is gone and gives us "undefined"
+
+
+
+#### Example 3: Using Loops to Go Through All Properties
+Sometimes you might want to see all the things about your toy car. 
+You can use a for...in loop to do that!
+
+for (let prop in toyCar) {
+  console.log(prop + ": " + toyCar[prop]);  
+}
+// This will print:
+// color: red
+// type: race car
+// speed: fast
+### Nested Objects: Objects Inside Objects
+Imagine the toy car has details about its wheels inside of it. 
+Like, the wheels have their own properties (like color and size too).
+
+const toyCarWithWheels = {
+  color: "blue",
+  wheels: {
+    number: 4,
+    size: "medium"
+  }
+};
+
+// How do we get the number of wheels?
+console.log(toyCarWithWheels.wheels.number);  // This gives us 4
+### Objects with Arrays Inside
+Your toy car might have different models. So let’s add an array of 
+models (different types of cars) inside our object.
+
+const toyCarWithModels = {
+  color: "yellow",
+  models: ["SUV", "Sports", "Truck"]
+};
+
+// How do we see all the models?
+for (let i in toyCarWithModels.models) {
+  console.log(toyCarWithModels.models[i]);  
+}
+// This will print:
+// SUV
+// Sports
+// Truck
+### Practice Example:
+Let’s create a person object with some information like their name, 
+age, and favorite hobby. Then, we'll add a new property for their favorite color!
+
+const person = {
+  name: "Alice",
+  age: 6,
+  hobby: "drawing"
+};
+
+// Now, let's add a new property
+person.favoriteColor = "blue";
+
+// Let's see all the information about the person
+for (let prop in person) {
+  console.log(prop + ": " + person[prop]);  
+}
+// This will print:
+// name: Alice
+// age: 6
+// hobby: drawing
+// favoriteColor: blue
+### Recap!
+- Properties are like pieces of information about objects.
+- You can add, delete, and change properties.
+- Use dot notation or bracket notation to access them.
+- Objects can have other objects or arrays inside them, too!
+
+
+
+
+
+### Imagine You Have a Toy Box (Object)
+Think of an object like a toy box. Inside the toy box, 
+you have different toys or things (properties). 
+For example, you might have a toy car, a teddy bear, or a doll.
+
+Now, methods are like the fun tricks you can do with those toys. 
+For example, your toy car can "zoom" (move fast), or your 
+teddy bear can "hug" you. So a method is like a special action 
+that one of your toys can do.
+
+### Let's Meet "person"
+Here’s an example of a toy box called person. 
+Inside, we have some toys like firstName (the name of the person) 
+and lastName (their last name). But guess what? 
+There's also a cool trick inside the toy box, called fullName! 
+This trick makes the person say their full name.
+
+Here’s what the person looks like:
+
+const person = {
+  firstName: "John",       // This is the person's first name
+  lastName: "Doe",         // This is the person's last name
+  fullName: function() {   // This is the trick (method) that says the full name
+    return this.firstName + " " + this.lastName;
+  }
+};
+Now, if you tell the person to do the fullName trick, 
+they will say their full name like this:
+
+let name = person.fullName();  // This makes the person say: "John Doe"
+console.log(name);             // It prints: John Doe
+### What is this?
+The word this is a bit tricky, 
+but think of it like this: when you say this, 
+you are talking about yourself. If you say, "This is my toy car," 
+you're talking about your own toy car.
+
+In our code, this.firstName is talking about the firstName inside the same toy box (object).
+
+---
+
+### Another Example: Adding a New Trick
+You can even teach your toy box (object) a new trick! 
+Let’s say we want to teach person to shout their name in BIG LETTERS:
+
+person.shoutName = function () {
+  return (this.firstName + " " + this.lastName).toUpperCase();  // Makes the name BIG
+};
+Now, when you ask person to do the shoutName trick, it will say:
+
+let loudName = person.shoutName();  // This makes the person shout: "JOHN DOE"
+console.log(loudName);              // It prints: JOHN DOE
+---
+
+### Let’s Try Some More Fun Tricks!
+
+1. Say the age:
+   You can add a method that makes the person say their age.
+
+  
+   person.age = 10;   // Adding an age to the person
+   person.sayAge = function () {
+     return "I am " + this.age + " years old";
+   };
+   
+   let age = person.sayAge();  // This makes the person say: "I am 10 years old"
+   console.log(age);           // It prints: I am 10 years old
+   
+2. Describe the person:
+   Let’s add a method to describe the person with their name and age.
+
+  
+   person.describe = function () {
+     return this.firstName + " is " + this.age + " years old.";
+   };
+   
+   let description = person.describe();  // This says: "John is 10 years old"
+   console.log(description);             // It prints: John is 10 years old
+   
+---
+
+### In Short
+- Objects are like toy boxes that hold things (properties) and tricks (methods).
+- Methods are like tricks or actions the object can perform.
+- this refers to the object itself, like the person who is performing the action.
+
+---
+
+### Practice Time!
+Try to make more objects and give them fun tricks! 
+For example, how about creating an object for a car that can 
+"start" and "drive" or an object for a dog that can "bark"?
+
+const car = {
+  brand: "Tesla",
+  model: "Model S",
+  start: function() {
+    return "The car is starting...";
+  },
+  drive: function() {
+    return "The car is driving fast!";
+  }
+};
+
+console.log(car.start());  // The car is starting...
+console.log(car.drive());  // The car is driving fast!
+
+
+----------------------------------------------------------------
+Display :
+1. Showing the Toys by Name
+First, you can open the box and say what each toy is, one by one. 
+This is like showing the object's properties by their names.
+
+const person = {
+  name: "John",   // this is one toy
+  age: 30,        // another toy
+  city: "New York" // and another toy
+};
+
+document.getElementById("demo").innerHTML = 
+person.name + ", " + person.age + ", " + person.city;
+
+Here, we are saying: "I have John, 30 years old, from New York."
+
+2. Showing the Toys Using a Loop
+
+What if you want to open the box and show all the toys one by one, 
+automatically? We can use a loop, which is like telling someone: 
+“Keep picking out the toys one after another.”
+
+let txt = "";  // This is like our list to keep all the toys
+for (let x in person) {
+  txt += person[x] + " ";  // Take each toy and add it to the list
+}
+document.getElementById("demo").innerHTML = txt;
+Now, the loop goes over everything in the toy box (the object) and shows: "John 30 New York."
+
+3. Turning the Toys into an Array (Object.values())
+
+Imagine you want to change the toys into a row, 
+like lining them up on the floor. In JavaScript,
+ we can turn the "toys" in the object into an array, which is just a line of things.
+
+const myArray = Object.values(person);  // Change the toys into a line
+document.getElementById("demo").innerHTML = myArray;
+
+Now, it shows the toys like: "John, 30, New York."
+
+4. Turning the Toys into a Story (JSON.stringify())
+
+What if you want to make a little story about the toys? 
+You could write it down as a string (like a sentence). 
+That’s what JSON.stringify does. It turns the object into a string so you can easily show it.
+
+let myString = JSON.stringify(person);  // Make the toys into a story
+document.getElementById("demo").innerHTML = myString;
+
+Now, it shows: {"name":"John","age":30,"city":"New York"}. 
+This is like saying, "Here’s the list of everything in my toy box!"
+
+
+---
+Dates: If you have a date, like today’s date, it will also turn into a string.
+
+const person = { name: "John", today: new Date() };
+let myString = JSON.stringify(person);
+document.getElementById("demo").innerHTML = myString;
+
+It will look like: {"name":"John","today":"2024-10-06T12:00:00Z"}.
+
+Functions: If there’s a function (like a toy that moves),
+ it won’t be shown unless you turn it into a string first.
+
+const person = { name: "John", age: function () {return 30;} };
+person.age = person.age.toString();  // Turn the function into a string
+let myString = JSON.stringify(person);
+document.getElementById("demo").innerHTML = myString;
+
+It will show the function as a string like this:
+ {"name":"John","age":"function () {return 30;}"}.
+
+Arrays: You can also turn arrays into strings, like showing a row of toys.
+
+const arr = ["John", "Peter", "Sally", "Jane"];
+let myString = JSON.stringify(arr);
+document.getElementById("demo").innerHTML = myString;
+
+This will look like: ["John","Peter","Sally","Jane"].
+
+
+Summary:
+Objects are like boxes with toys (data) inside.
+You can show these toys by name, loop through them,
+ turn them into a line (array), or make them into a story (string).
+Some things, like dates or functions, need special handling to be displayed.
+--------------------------------------------
+And when you want to set a new toy inside the box,
+ you carefully choose a toy and put it inside. 
+ That's like using a setter—you put something into the box (or change it).
+Now, let's look at an example:
+JavaScript Getter
+Imagine you have a toy box with a label that says 
+what toy is inside. You don’t change the toy, just check it:
+
+const toyBox = {
+  toy: "Car",
+  get checkToy() {
+    return this.toy;
+  }
+};
+
+// You're just looking at what toy is inside the box.
+console.log(toyBox.checkToy);  // It says "Car"
+
+Here, the "getter" lets us check what toy is inside without changing it.
+
+JavaScript Setter
+Now, imagine you want to change the toy inside the box.
+ Instead of a car, you want to put in a doll:
+
+const toyBox = {
+  toy: "",
+  set changeToy(newToy) {
+    this.toy = newToy;
+  }
+};
+
+// You are putting a new toy into the box.
+toyBox.changeToy = "Doll";
+
+// Now the box has a doll.
+console.log(toyBox.toy);  // It says "Doll"
+Here, the "setter" allows you to change what's inside the toy box.
+
+Difference Between Function and Getter
+In one case, you’re asking the toy box to tell you the name of the toy
+ by calling a function. It's like asking: "Hey, toy box, what’s your toy?" 
+ And the toy box talks back:
+
+const toyBox = {
+  toy: "Car",
+  getToyName: function() {
+    return this.toy;
+  }
+};
+
+console.log(toyBox.getToyName());  // You get "Car"
+
+In another case, with a getter, you don’t ask the toy box a question,
+ you just look at the label directly:
+
+const toyBox = {
+  toy: "Car",
+  get toyName() {
+    return this.toy;
+  }
+};
+
+console.log(toyBox.toyName);  // You get "Car" without calling a function
+
+Why Use Getters and Setters?
+Simpler: It’s easier to look at a label than to ask a question.
+Equal Syntax: You can check and change things in the same way.
+Data Quality: You can make sure the toy is always clean 
+(for example, always capital letters).
+Behind the Scenes: The toy box can secretly clean the toy before giving it to you.
+Getters: Peeking Inside Without Changing Anything
+A getter is like having a window on your toy box. 
+You can look inside, see what toy is in there, but you can't touch or change the toy.
+Setters: Changing What’s Inside the Toy Box
+A setter is like having a special way to put toys
+ into the toy box. You don’t just open it and throw in any toy; 
+ you carefully place it using a rule.
+
+---
+
+Advanced Example: Using Object.defineProperty()
+
+
+
+
+
+Here, we used Object.defineProperty() to create getters and setters that:
+
+Reset the count.
+
+Add toys to the count.
+
+Subtract toys from the count.
+
+
+
+---
+
+Summary:
+
+Getters: Let you "look" inside the object, like looking through a 
+window without changing anything.
+
+Setters: Let you "change" or "set" a value inside the object with some rules.
+
+Why Use Them?: They make code simpler, easier to read, and allow you 
+to add special rules (like uppercase letters or counting toys).

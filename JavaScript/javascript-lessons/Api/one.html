@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Superhero Search</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        max-width: 400px;
+        margin: auto;
+      }
+      #dog img {
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      #description p {
+        margin: 5px 0;
+      }
+      input, button {
+        padding: 8px;
+        margin: 5px 0;
+        font-size: 16px;
+      }
+      #lname {
+        width: calc(100% - 18px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Superhero Finder</h1>
+    <input type="text" id="lname" name="lname" placeholder="Enter hero name" />
+    <button id="searchBtn">Search</button>
+    <button id="randomBtn">Random Hero</button>
+
+    <div id="dog"></div>
+    <div id="description"></div>
+
+    <script src="api.js"></script>
+  </body>
+</html>

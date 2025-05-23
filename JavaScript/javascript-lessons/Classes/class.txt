@@ -1,0 +1,53 @@
+### What is a class?
+Imagine you want to create many toy cars. Instead of making each car 
+from scratch every time, you could first make a blueprint (a drawing or plan) of the car. 
+Then, whenever you want a new car, you can just follow the blueprint to make one quickly.
+
+A class in JavaScript is like that blueprint for objects. 
+It tells the computer what a new object should look like and what it can do.
+
+### How do we create a class?
+To make a blueprint (class) in JavaScript, we use the word class. 
+We give it a name, like "Car", and inside, we create a special part called the constructor. 
+This constructor is like the part of the blueprint that tells the computer what the car’s name 
+and year are.
+
+### What does this do?
+- name: What is the car called? (e.g., Ford, Audi)
+- year: When was the car made? (e.g., 2014, 2019)
+
+The constructor part helps the computer know these things whenever we make a new car.
+
+### Making a new car
+Now, we can make as many toy cars as we want using our blueprint! Here's how we make two cars:
+let myCar1 = new Car("Ford", 2014);
+let myCar2 = new Car("Audi", 2019);
+Now we have two cars! One is called "Ford", made in 2014, and the other is "Audi", made in 2019.
+
+### What are methods?
+A method is like a tool your car can use. For example, 
+if we want to know how old our car is, we can make a tool called age() 
+that calculates it for us.
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  
+  age() {
+    let date = new Date();  // Gets the current year
+    return date.getFullYear() - this.year;  // Subtracts the car’s year from the current year
+  }
+}
+### How do we use this?
+Now, we can ask our car how old it is by using the age() method.
+let myCar = new Car("Ford", 2014);
+console.log("My car is " + myCar.age() + " years old.");
+This will tell us how old the car is by subtracting the car’s year from the current year.
+
+### That’s it!
+
+- Classes are blueprints for making objects (like toy cars).
+- The constructor is where we tell the computer what each object needs (name and year).
+- Methods are like tools that objects can use to do things (like figuring out the car’s age).

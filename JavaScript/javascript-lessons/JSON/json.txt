@@ -1,0 +1,85 @@
+
+### What is JSON?
+
+- JSON (say it like "Jay-Son") is a way to store and share information, 
+like a list of your toys.
+- It's like writing down all your toy names and types in a very simple format 
+that computers and people can both read.
+- Even though JSON is written a little like JavaScript, 
+it can be used by many different computer languages, not just JavaScript!
+
+### How does it look?
+Imagine you want to make a list of toys. 
+Each toy has two parts: the name and the type of toy. 
+Here’s how we would write that in JSON:
+
+{
+  "toys": [
+    { "name": "Teddy Bear", "type": "Stuffed Animal" },
+    { "name": "Lego Blocks", "type": "Building Toy" },
+    { "name": "Toy Car", "type": "Vehicle" }
+  ]
+}
+- Curly braces { } are like the box that holds all the information.
+- Square brackets [ ] are like a list of items (in this case, toys).
+- Colons : separate the name from its value, like “name”: “Teddy Bear.”
+- Commas , are used to separate different toys or pieces of information.
+
+### What are some rules?
+- Names (like "name" and "type") must be in double quotes " " 
+so everyone knows exactly what we’re talking about.
+- Each piece of information is written in pairs: a name and a value. 
+For example: "name": "Teddy Bear".
+
+### JSON Objects
+An object in JSON is like one complete toy. Here’s one toy:
+{ "name": "Teddy Bear", "type": "Stuffed Animal" }
+This is a JSON object because it has all the information about one toy. 
+
+### JSON Arrays
+An array in JSON is like a list of toys, 
+not just one toy. So, an array would look like this:
+[
+  { "name": "Teddy Bear", "type": "Stuffed Animal" },
+  { "name": "Lego Blocks", "type": "Building Toy" }
+]
+In this case, we have two toys in our list. 
+Arrays are great when you have more than one item.
+
+### How do we use JSON in JavaScript?
+Let’s say you’ve written all your toys in JSON, like this:
+{
+  "toys": [
+    { "name": "Teddy Bear", "type": "Stuffed Animal" },
+    { "name": "Lego Blocks", "type": "Building Toy" },
+    { "name": "Toy Car", "type": "Vehicle" }
+  ]
+}
+Now, in JavaScript, you can turn this JSON text into something JavaScript 
+can understand using a magic function called **JSON.parse()**.
+
+Here’s how it works:
+1. You write the JSON astringng** (a line of text):
+  
+   let text = '{ "toys": [' +
+   '{ "name": "Teddy Bear", "type": "Stuffed Animal" },' +
+   '{ "name": "Lego Blocks", "type": "Building Toy" },' +
+   '{ "name": "Toy Car", "type": "Vehicle" } ]}';
+   
+2. Then, you tell JavaScriptparsese** this text (turn it into real JavaScript objects) using:
+  
+   const obj = JSON.parse(text);
+   
+3. Finally, you can use this information in your webpage. 
+For example, if you want to show the name of the second toy, you can do this:
+  
+   document.getElementById("demo").innerHTML = obj.toys[1].name;
+   
+   This will s"Lego Blocks"s"** because it’s the second toy in the list!
+
+### SummaryJSONON** is a way to store and share information.
+- It ucurly braceses** {} for objects (things) square bracketsts** [] for arrays (lists).
+- You write everythingname/value pairsrs**, like "name": "Teddy Bear".
+- You can easily turn JSON into JavaScript objects using **JSON.parse()**.
+
+It’s like writing down all your toys in a way that anyone can read and understand, even computers!

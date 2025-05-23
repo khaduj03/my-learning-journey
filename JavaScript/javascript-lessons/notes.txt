@@ -1,0 +1,212 @@
+Notes on DOM Nodes and Elements
+1. Nodes in the DOM
+Every node is an object in the DOM.
+For example: typeof(link) returns "object".
+
+There are 12 kinds of nodes in the DOM, each with its own special properties.
+For example:
+
+cookie is a property only available on the document node, not other nodes.
+
+2. Important properties of the document object
+URL – The current URL of the document.
+
+baseURI – Base URL of the document.
+
+domain – Returns the domain or IP address of the document.
+
+title – The document's title.
+
+scripts – Returns a list of all <script> elements. For example, it may include scripts you wrote and those added by live servers.
+
+documentElement – Returns the root <html> element.
+
+head – Returns the <head> element.
+
+body – Returns the <body> element.
+
+forms – Returns a collection of all <form> elements in the document.
+
+images – Returns all <img> elements.
+
+lastModified – Returns the date and time the document was last modified.
+
+activeElement – Returns the currently focused element.
+
+links – Returns all <a> and <area> elements with href attributes.
+
+characterSet – Returns the character encoding of the document (e.g. "UTF-8").
+
+readyState – Shows the document’s loading state (e.g., "loading", "interactive", "complete").
+
+3. Important document methods
+In the DOM tree, attributes are nodes too!
+
+To create a new attribute node:
+
+ 
+        let att = document.createAttribute("target");
+        att.value = "_blank"; // Every attribute has a key and a value
+        console.log(att.nodeType);  // Attribute node type
+        console.log(att.nodeName);  // "target"
+        To add this attribute node to an element:
+
+ 
+        element.setAttributeNode(att);
+        Alternatively, you can add an attribute directly without creating a node:
+
+ 
+        element.setAttribute("target", "_blank");
+        To create a new element node:
+
+ 
+        let newElement = document.createElement("div");
+        To create a new text node (text inside elements):
+
+ 
+        let newText = document.createTextNode("Hello world!");
+        To add a child node inside a parent:
+
+
+        parent.appendChild(newText);
+        document.open() — Opens a new document for writing.
+
+        document.write("<h1>Hello</h1>") — Writes HTML to the document.
+
+        document.close() — Closes the document stream.
+
+4. Properties and methods specific to Element nodes
+tagName — Returns the tag name in uppercase (e.g. "DIV", "P").
+
+querySelector — Returns the first matching element. Note: tag names must be uppercase when comparing with tagName.
+
+matches(selector) — Returns true if the element matches the CSS selector, otherwise false.
+
+requestFullscreen() — Makes the element enter fullscreen mode (e.g., when clicking an image or video).
+
+5. AccessKey property
+accessKey lets you assign a shortcut key to an element, activating it when the shortcut is pressed.
+
+6. Attributes
+Every element has an attributes property, which is a NamedNodeMap containing all attribute nodes.
+
+Attributes have properties:
+
+name
+
+value
+
+ownerElement — The element the attribute belongs to.
+
+NamedNodeMap methods:
+
+getNamedItem(name)
+
+removeNamedItem(name)
+
+setNamedItem(attrNode)
+
+To set an attribute by name and value:
+
+
+        element.setAttribute("target", "_blank");
+        To get or remove an attribute:
+
+
+        element.getAttribute("class");
+        element.removeAttribute("style");
+Note: The HTML class attribute is accessed as className in JavaScript.
+
+Difference between setAttribute and setAttributeNode:
+
+setAttribute accepts name and value as strings.
+
+setAttributeNode accepts an attribute node.
+
+7. Style property
+element.style is an object allowing you to modify CSS properties, e.g.:
+
+
+        element.style.color = "red";
+        element.style.backgroundColor = "blue";
+8. Managing classes
+className — Gets or sets the full class string.
+
+classList — Contains methods to manage individual classes:
+
+add("className") — Add a class.
+
+remove("className") — Remove a class.
+
+replace("oldClass", "newClass") — Replace a class.
+
+contains("className") — Check if class exists.
+
+toggle("className") — Add the class if missing, remove if exists.
+
+9. Creating, cloning, and removing elements
+Create element and add text:
+
+
+        let newDiv = document.createElement("div");
+        newDiv.innerText = "Hello!";
+        parent.appendChild(newDiv);
+
+
+        let clone = element.cloneNode(true); // true for deep clone including children
+        Remove child node (called on the parent):
+
+
+        parent.removeChild(child);
+        Replace a child node:
+
+
+        parent.replaceChild(newChild, oldChild);
+        Insert element relative to another element using insertAdjacentElement:
+
+
+        element.insertAdjacentElement("beforebegin", newElement);
+        // other positions: "afterend", "afterbegin", "beforeend"
+10. Element size and position properties
+clientHeight / clientWidth — Content height/width excluding border, scrollbar.
+
+offsetWidth — Includes border width.
+
+scrollWidth — Full scrollable width of the element.
+
+Border sizes:
+
+clientLeft, clientTop, etc. — Size of left/top border.
+
+Position properties:
+
+offsetLeft, offsetTop — Distance from offset parent.
+
+11. Navigating child and sibling nodes
+childNodes — All child nodes (including text nodes).
+
+children — Only child elements (no text or comment nodes).
+
+childElementCount — Number of child elements.
+
+First and last children:
+
+firstChild / lastChild — Any node type.
+
+firstElementChild / lastElementChild — Only elements.
+
+Siblings:
+
+nextSibling / previousSibling — Any node.
+
+nextElementSibling / previousElementSibling — Elements only.
+
+closest(selector) — Finds the nearest ancestor matching the selector (including itself).
+
+12. Getting element content
+innerHTML — Gets or sets the HTML content inside an element.
+
+textContent — Gets or sets the text content (ignores HTML tags).
+
+innerText — Gets or sets the rendered text content (affected by CSS).
+
