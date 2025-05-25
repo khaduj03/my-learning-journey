@@ -1,0 +1,88 @@
+// users.js
+module.exports = [
+  { id: 1, first_name: "John", email: "john@example.com", password: "123456" },
+  { id: 2, first_name: "Jane", email: "jane@example.com", password: "654321" },
+  { id: 3, first_name: "Jim", email: "jim@example.com", password: "abcdef" },
+  { id: 4, first_name: "Jack", email: "jack@example.com", password: "qwerty" },
+  { id: 5, first_name: "Jill", email: "jill@example.com", password: "asdfgh" },
+  { id: 6, first_name: "Joe", email: "joe@example.com", password: "123abc" },
+  {
+    id: 7,
+    first_name: "Jenny",
+    email: "jenny@example.com",
+    password: "pass123",
+  },
+  {
+    id: 8,
+    first_name: "James",
+    email: "james@example.com",
+    password: "brownie",
+  },
+  {
+    id: 9,
+    first_name: "Jessica",
+    email: "jessica@example.com",
+    password: "ilovecats",
+  },
+  {
+    id: 10,
+    first_name: "Jordan",
+    email: "jordan@example.com",
+    password: "king123",
+  },
+  {
+    id: 11,
+    first_name: "Julia",
+    email: "julia@example.com",
+    password: "whitepw",
+  },
+  {
+    id: 12,
+    first_name: "Jerry",
+    email: "jerry@example.com",
+    password: "black12",
+  },
+  {
+    id: 13,
+    first_name: "Jasmine",
+    email: "jasmine@example.com",
+    password: "green88",
+  },
+  {
+    id: 14,
+    first_name: "Jason",
+    email: "jason@example.com",
+    password: "blueblue",
+  },
+  {
+    id: 15,
+    first_name: "Jacob",
+    email: "jacob@example.com",
+    password: "graygray",
+  },
+  {
+    id: 16,
+    first_name: "Janet",
+    email: "janet@example.com",
+    password: "redred1",
+  },
+  {
+    id: 17,
+    first_name: "Jeff",
+    email: "jeff@example.com",
+    password: "orange2",
+  },
+  {
+    id: 18,
+    first_name: "Joan",
+    email: "joan@example.com",
+    password: "purple3",
+  },
+  {
+    id: 19,
+    first_name: "Josh",
+    email: "josh@example.com",
+    password: "silver4",
+  },
+  { id: 20, first_name: "Joy", email: "joy@example.com", password: "gold567" },
+];
