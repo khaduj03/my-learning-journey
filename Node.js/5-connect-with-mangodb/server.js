@@ -2,6 +2,7 @@
 // Day 11:2025/May/26 and Day 12:2025/May/27 I was too sick :(
 // Day 13 :2025/May/28 
 // Day 14 :2025/May/29
+//Day 15 :2025 /May/30
 
 const path = require("path");
 const baseDir = path.resolve(__dirname);
@@ -57,7 +58,6 @@ app.set("view engine", "ejs");
 // To make this automatic, we can use a package named "auto-bind".
 // We use "auto-bind" in the parent controller class, so we don’t have to bind each method manually.
 app.use("/", require("./routes/index.js"));
-
 
 app.listen(config.port, () => {
   console.log("Server is running on port " + config.port);

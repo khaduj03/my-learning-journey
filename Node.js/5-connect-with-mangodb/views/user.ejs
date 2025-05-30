@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/<%= user.id %>?method=PUT" method="POST">
+    <form action="/users/<%= user._id %>?method=PUT" method="POST">
         <label>id:</label>
         <input type="text" name="id" value="<%= user.id %>" required />
   

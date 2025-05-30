@@ -58,10 +58,10 @@
             <td><%= user.first_name %></td>
             <td><%= user.email %></td>
             <td>
-              <form action="/<%= user.id %>?method=DELETE" method="POST" style="display:inline;">
+              <form action="/users/<%= user.id %>?method=DELETE" method="POST" style="display:inline;">
                 <button type="submit">🗑 Delete</button>
               </form>
-              <a href="/<%= user.id %>">✏️ Update</a>
+              <a href="users/<%= user.id %>">✏️ Update</a>
             </td>
           </tr>
         <% }) %>
@@ -69,7 +69,7 @@
     </table>
 
     <h2>➕ Add New User</h2>
-    <form action="/add-user" method="POST">
+    <form action="/users/add-user" method="POST">
       <label>First Name:</label>
       <input type="text" name="first_name" />
 
