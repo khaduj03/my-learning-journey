@@ -13,6 +13,8 @@ class UserController extends controller {
 
       // Get all users from MongoDB
       const users = await User.find({});
+      //and also for passing data in view for user we have another way also
+      res.locals = { myMessage: "this message is from locals" };
 
       // Render index.ejs with users and messages
       res.render("index", {
@@ -82,7 +84,7 @@ class UserController extends controller {
   async deleteUser(req, res, next) {
     try {
       await User.deleteOne({ _id: req.params.id });
-
+ 
       req.flash("message", "🗑️ User deleted successfully");
       res.redirect("/users");
     } catch (err) {

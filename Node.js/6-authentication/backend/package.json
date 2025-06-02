@@ -1,19 +1,19 @@
 {
-  "name": "view",
+  "name": "6-authentication",
   "version": "1.0.0",
+  "description": "this is just for test",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "app-module-path": "^2.2.0",
     "auto-bind": "^5.0.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express-session": "^1.18.1",
