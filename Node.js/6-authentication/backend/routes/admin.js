@@ -8,9 +8,13 @@ const UserValidator = require("../validators/userValidator");
 
 router.get("/", userController.getAllUsers);
 
-router.post("/add-user", UserValidator.handle(), userController.createUser);
+router.post(
+  "/add-user",
+  UserValidator.handle(),
+  userController.createUser
+);
 
-router.get("/:id", userController.seeOneUser);
+// router.get("/:id", userController.seeOneUser);
 
 router.put("/:id", userController.updateUser);
 

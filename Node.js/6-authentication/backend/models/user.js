@@ -1,30 +1,58 @@
-// const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
-
-// const userSchema = new Schema(
-//   {
-//     first_name: { type: String, required: true },
-//     last_name: { type: String, required: true },
-//     email: { type: String, required: true, unique: true },
-//     password: { type: String, required: true },
-//     avatar: { type: String, default: "/default-avatar.jpg" }, 
-//     bio: { type: String, default: "" },
-//     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }], 
-//     followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-//     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
-//   },
-//   { timestamps: true }
-// )
-
-// module.exports = mongoose.model("User", userSchema, "User");
-
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const Schema = mongoose.Schema;
+const userSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+//for hasing password we use from bcrypt library and we use pre hook to hash the password before saving it to the database
+//the link of bcrypt library is https://www.npmjs.com/package/bcrypt
+// and we use methods to compare the password with the hashed password in the database
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) return next();
 
-const userSchema = new Schema({
-  first_name: { type: String, required: true},
-  email: { type: String, required: true },
-  password: { type: String, required: true },
+  try {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
-module.exports = mongoose.model("User", userSchema, " User");
+
+// Compare password method
+userSchema.methods.comparePassword = async function (candidatePassword) {
+  return bcrypt.compare(candidatePassword, this.password);
+};
+
+module.exports = mongoose.models.User || mongoose.model("User", userSchema);

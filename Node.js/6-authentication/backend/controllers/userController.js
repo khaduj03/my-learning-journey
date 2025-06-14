@@ -3,67 +3,50 @@ const User = require("./../models/user.js");
 const { validationResult } = require("express-validator");
 
 class UserController extends controller {
-  // Get all users as JSON (for Next.js frontend)
-  async getAllUsers(req, res, next) {
+  // Get all users 
+  async getAllUsers(req, res){
     try {
-      const users = await User.find({});
-      res.json({ users }); 
-    } catch (err) {
-      next(err);
-    }
-  }
-
-  // Get one user by ID
-  async seeOneUser(req, res, next) {
-    try {
-      const user = await User.findOne({ _id: req.params.id });
-
-      if (!user) {
-        return res.status(404).json({ error: "User not found" });
-      }
-
-      res.json({ user });
-    } catch (err) {
-      next(err);
+      const users = await require("../models/user.js").find().select("-password");
+      res.render("admin", { users });
+    } catch (error) {
+      req.flash("error", "Error fetching users");
+      res.redirect("/dashboard");
     }
   }
 
   // Create a new user
   async createUser(req, res, next) {
     try {
-      const errors = validationResult(req);
-
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
-
-      const { first_name, email, password } = req.body;
-
-      const newUser = new User({ first_name, email, password });
-      await newUser.save();
-
-      res
-        .status(201)
-        .json({ message: "User added successfully", user: newUser });
+      console.log("Creating user with body:", req.body);
     } catch (err) {
       next(err);
     }
   }
 
   // Update an existing user
-  async updateUser(req, res, next) {
+  async updateUser(req, res){
     try {
-      const updated = await User.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
+      const { username, email } = req.body;
+  
+      const existingUser = await User.findOne({
+        $or: [
+          { username, _id: { $ne: req.user._id } },
+          { email, _id: { $ne: req.user._id } },
+        ],
       });
-
-      if (!updated) {
-        return res.status(404).json({ error: "User not found" });
+  
+      if (existingUser) {
+        req.flash("error", "Username or email already taken");
+        return res.redirect("/auth/profile");
       }
-
-      res.json({ message: "User updated successfully", user: updated });
-    } catch (err) {
-      next(err);
+  
+      await User.findByIdAndUpdate(req.user._id, { username, email });
+  
+      req.flash("success", "Profile updated successfully");
+      res.redirect("/auth/profile");
+    } catch (error) {
+      req.flash("error", "Error updating profile");
+      res.redirect("/auth/profile");
     }
   }
 
@@ -73,10 +56,14 @@ class UserController extends controller {
       const deleted = await User.findByIdAndDelete(req.params.id);
 
       if (!deleted) {
-        return res.status(404).json({ error: "User not found" });
+        return req.flash("error", "User not found");
       }
-
-      res.json({ message: "User deleted successfully" });
+      if (deleted._id.toString() === req.user._id.toString()) {
+        return req.flash("error", "Cannot delete your own account");
+      }
+      req.flash("success", "User deleted successfully");
+      res.redirect("/admin");
+     
     } catch (err) {
       next(err);
     }
