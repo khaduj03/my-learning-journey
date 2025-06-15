@@ -35,7 +35,7 @@ const flash = require("connect-flash");
 // environments without changing the code.
 // Example: PORT=3000 in the .env file becomes available as process.env.PORT in the code.
 require("dotenv").config();
-``
+
 
 global.config = require("./config");
 
