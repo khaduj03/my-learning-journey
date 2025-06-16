@@ -1,5 +1,6 @@
 const User = require("../models/user");
-const bcrypt = require("bcrypt");
+const {validationResult}=require("express-validator")
+const passport=require("../passport/passport-local")
 
 exports.loginForm = (req, res) => {
   res.render("auth/login.ejs");
@@ -10,41 +11,31 @@ exports.registerForm = (req, res) => {
   res.render("auth/register");
 };
 
-
-exports.login= async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const user = await User.findOne({ email });
-
-    if (!user) {
-      req.flash("error", "User not found");
-      return res.redirect("/auth/login");
-    }
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      req.flash("error", "Invalid password");
-      return res.redirect("/auth/login");
-    }
-
-    // Log the user in using Passport
-    req.login(user, (err) => {
-      if (err) {
-        return next(err);
-      }
-      req.flash("success", "You logged in successfully");
-      return res.redirect("/dashboard");
-    });
-  } catch (error) {
-    console.log(error);
-    req.flash("error", "Something went wrong");
-    res.redirect("/auth/login");
+exports.login = (req, res, next) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const errorMessages = errors.array().map((err) => err.msg);
+    req.flash("error", errorMessages);
+    return res.redirect("/auth/login");
   }
-}
+
+  passport.authenticate("local", {
+    successRedirect: "/dashboard",
+    failureRedirect: "/auth/login",
+    failureFlash: true,
+  })(req, res, next);
+};
 
 
 exports.register = async (req, res) => {
   try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const errorMessages = errors.array().map((err) => err.msg);
+      req.flash("error", errorMessages);
+      return res.redirect("/auth/register");
+    }
+
     const { username, email, password } = req.body;
 
     const existingUser = await User.findOne({ email });
@@ -68,4 +59,16 @@ exports.register = async (req, res) => {
     req.flash("error", "Something went wrong. Please try again.");
     res.redirect("/auth/register");
   }
+};
+
+exports.logout = async (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      req.flash("error", "Logout error");
+      return res.redirect("/");
+    }
+
+    req.flash("success", "You have been logged out successfully");
+    res.redirect("/");
+  });
 };
