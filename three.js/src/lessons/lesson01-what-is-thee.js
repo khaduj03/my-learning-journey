@@ -60,7 +60,7 @@
 // ----------------------
 // Three.js Fundamentals – Scene and Its Children
 // ----------------------
-
+//https://www.figma.com/board/Ym0Nc72NHeUq5oto0LX7Mr/Three.js-Fundamentals--original-?node-id=0-1&p=f&t=vdlDwhfkypf7cT8m-0
 // 1. Scene
 // Acts like a stage that holds everything (objects, lights, camera). It organizes what gets displayed,
 // but it does not render anything by itself.
