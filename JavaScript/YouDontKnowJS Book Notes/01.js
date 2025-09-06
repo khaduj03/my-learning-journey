@@ -64,3 +64,62 @@
 // Backwards Compatibility: Code written in older versions of JS should work in newer versions.
 // Forwards Compatibility: Code written in newer versions of JS should work in older versions.
 // JS guarantees backwards compatibility but not forwards compatibility.
+
+// JavaScript is not always forward-compatible. 
+// For example, using ES2019 features on a browser from 2016 might cause problems.
+// If it's a new syntax feature, you'll likely get a syntax error.
+// If it's a new API feature, it might work until the program encounters the unsupported API.
+// Should we always stick to old versions? Of course not! 
+// We can use transpiling with popular tools like Babel.
+
+// -----------------------------
+// Filling the Gaps:
+// JavaScript is always evolving. New features (syntax or APIs) are added every year,
+// but old browsers or JS engines don’t always know these new features.
+
+// Example: Using a feature added in ES2019 (Promise.prototype.finally)
+fetchData()
+  .then(renderData)
+  .catch(showError)
+  .finally(hideSpinner); // If this runs in a browser from 2016, the program will break
+
+// What is the solution?
+// We can use transpiling (e.g., Babel) to convert modern JS into older, compatible JS.
+
+// Example:
+
+// Modern JS:
+let x = 3;
+if (condition) {
+  let y = 4;
+}
+
+// Transpiled to older JS by Babel:
+var x$0 = 3;
+if (condition) {
+  var y$1 = 4;
+}
+
+
+// -----------------------------
+// Polyfilling:
+// A polyfill is like giving the browser or JS engine a “fake” definition of a missing method
+// so it behaves as if it existed natively.
+
+// Example: Polyfill for Promise.prototype.finally
+if (!Promise.prototype.finally) {
+  Promise.prototype.finally = function (fn) {
+    return this.then(
+      function (v) {
+        return Promise.resolve(fn()).then(() => v);
+      },
+      function (e) {
+        return Promise.resolve(fn()).then(() => { throw e; });
+      }
+    );
+  };
+}
+
+
+
+//////Go    02.js    file :)
