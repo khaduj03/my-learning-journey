@@ -102,3 +102,33 @@ mathHomework.study(); // Please study Math
 // Key takeaway:
 // - A function closed over scope can only access that scope
 // - A function using dynamic this can flexibly operate with different objects
+//----------------------------------------------------------------------------
+// Pillar 1: Scope and Closure
+// 1. Scope :Scope decides where a variable can be accessed.
+// Think of scope like buckets, and variables as marbles inside the buckets. You can only see the marbles in your bucket or in outer buckets, not in inner ones.
+// JavaScript uses lexical scope, meaning where you write a function decides what variables it can access, not where you call it.
+
+// 2. Hoisting and var/let/const
+// Variables declared with var are hoisted to the top of their function and function-scoped.
+// Variables declared with let and const are block-scoped, and cannot be used before they are defined (this is called Temporal Dead Zone or TDZ).
+
+// 3. Closure : A closure happens when a function remembers variables from its outer scope, even if it runs somewhere else.
+// Closures let functions keep private variables, preserve data across calls, and are used a lot in modules and callbacks.
+
+// Example:
+function outer() {
+  let msg = "Hello";
+  return function inner() {
+    console.log(msg);
+  };
+}
+
+const sayHello = outer();
+sayHello(); // Prints: "Hello"
+
+
+// Even after outer() finishes, inner() remembers msg.
+
+// Key Points
+// Scope = decides which variables are visible.
+// Closure = functions can remember outer variables.
