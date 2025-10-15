@@ -1,0 +1,114 @@
+//day-1------------------------------------------------------------
+Donald Knuth: computer science is essentially the study of algorithms.
+To find a solution to a problem, we can consider three important points:
+1- Understanding the problem deeply
+2- Creating a plan (or map) for how to solve the problem
+3- Analyzing the problem and its solution
+
+1- Understanding the problem:
+1.1 Data: the given information or inputs we have, and the results we can get from them.
+1.2 Unknown (Majhol): the value or result the problem is asking us to find.
+1.3 Connection between data and unknowns: the logical relationship that helps us use the data to find the unknowns.
+
+For example: we want to find a number between 10 and 20.
+Data: the two numbers (10, 20)
+Unknown: the number between them
+Connection: the formula or rule that defines how to get a number between 10 and 20.
+
+Finding the approach: after understanding the problem, the second step is to find a solution.
+We can find two types of solutions:
+1. With an algorithm
+2. Without an algorithm (theoretical or direct way)
+
+Example 2: Suppose there are 20 chess players in a tournament. Each match eliminates one player.
+Determine how many matches are played in total.
+
+Data: 20 players
+Unknown: total number of matches played
+
+Non-algorithmic approach: in every chess match, there is one winner and one loser.
+Since there are 20 participants and only one winner remains at the end,
+that means 19 players must have been eliminated.
+Therefore, 19 matches were played in total.
+
+Algorithmic approach: the total number of matches equals the number of players minus one.
+So, total matches = 20 - 1 = 19.
+
+So what is an algorithm?
+Abu Musa al-Khwarizmi: the way he solved problems was called “al-Khwarizmi,”
+and later, this word became “algorithm.”
+An algorithm is a set of ordered and well-defined steps that solve a problem.
+
+Advantages of an algorithm:
+1. The number of steps is finite and known.
+2. It has a clear starting point and ending point.
+3. Each step is unambiguous (no confusion or vagueness).
+4. Each step is understandable and executable.
+5. Every step has a specific purpose.
+
+Algorithm from the machine’s point of view:
+1. Receiving some data (input)
+2. Producing one or more results (output)
+3. Performing comparison operations between data
+4. Storing data and information in memory
+5. Performing mathematical or logical operations
+
+Note:
+For two data values, we always have these cases:
+a < b   a > b   a = b
+
+For one data value, we have these cases:
+a = 0   a < 0   a > 0
+
+
+// day-2------------------------------------------------------------------------------------------
+- Natural numbers: infinite set that starts from 1 and goes to infinity. Denoted by (N).
+
+- Integers: infinite set that extends in both directions, positive and negative, and includes 0 as the center. Denoted by (Z).
+
+- Rational numbers: infinite set where each number can be written as a fraction (numerator and denominator are integers, and the denominator is not equal to 0). Denoted by (Q).
+
+- Real numbers: infinite set that includes natural numbers, integers, rational numbers, and irrational numbers (such as roots or π). Denoted by (R).
+
+
+- Function (Tabe):  
+Assume A and B are two sets.  
+Every relationship that connects each element of set A with exactly one element of set B is called a **function from A to B**.  
+It is written as:  
+f: A → B
+
+
+
+- Integer part function (Tabe Juz Saheh):  
+It is a function from the set of real numbers (R) to the set of integers (Z).  
+Each real number is related to the **greatest integer less than or equal to it**.  
+It is written as:  
+f: R → Z
+
+
+exmaple:
+[2.3]=2   ,[2]=2  ,[-1]=-1
+
+- Division:
+Assume a and b belong to the set of integers (Z) and b ≠ 0.
+
+a = dividend (maqsoom)
+b = divisor (maqsoom alayh)
+q = quotient (kharij qesmat)
+r = remainder (baghimandeh)
+
+So, a, b, q, r ∈ Z
+
+exmaple:Find the quotient and remainder of 15 divided by 4.
+15 ÷ 4 = 3.75
+So,
+
+Quotient (q) = 3
+Remainder (r) = 15 − (4 × 3) = 3
+
+Therefore:15 = 4 × 3 + 3
+
+Note:
+Always remember that these divisions are defined in the set of integers (Z), not in the real numbers (R).  
+For example, the result of 1 ÷ 2 = 0.5 is not correct here,  
+because 0.5 does not belong to Z (the set of integers).
