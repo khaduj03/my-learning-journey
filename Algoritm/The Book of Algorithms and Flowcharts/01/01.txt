@@ -112,3 +112,41 @@ Note:
 Always remember that these divisions are defined in the set of integers (Z), not in the real numbers (R).  
 For example, the result of 1 ÷ 2 = 0.5 is not correct here,  
 because 0.5 does not belong to Z (the set of integers).
+
+//--day-3---------------------------------------------------------------------
+- Divisibility:
+Assume a and b belong to the set of integers (Z) and b ≠ 0.  
+We say that "a is divisible by b" if the remainder of the division of a by b is equal to zero.  
+
+In this case, we write:
+a / b = [a / b]
+
+Note:
+If we divide a by b (where b ≠ 0), the remainder (r) of this division is always one of these numbers:
+0, 1, 2, …, (b - 1)
+
+
+Some suggestions for writing algorithms:
+
+A) At the beginning of every algorithm, the word **Start** should be written,  
+   and at the end, the word **End** should be included.
+
+B) Each action (step) in the algorithm should have a specific symbol or sign to make it clear.
+
+C) When performing calculations or operations on multiple pieces of data,  
+   we must store both the data and their results.
+
+D) For operations or storing values in a specific place (memory or storage),  
+   we use the following sign:  <--
+
+Example 1:
+A <-- 2  
+means “store the value 2 in A” or “A is assigned the value 2”.
+
+Example 2:
+C <-- B + 1  
+means “take the value of B, add 1, and store the result in C”.
+
+
+
+khaduj let's go and solve problems with python and js lol 😎
