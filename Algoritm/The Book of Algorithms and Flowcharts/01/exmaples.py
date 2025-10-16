@@ -10,7 +10,7 @@ def average(a, b, c):
     return result
 
 final = average(a, b, c)
-# print(final)
+# print(final) #3.3333333333333335
 
 # 2)------------------------------------------------------------------------------
 # The salary of an employee is A riyals.
@@ -62,12 +62,84 @@ def find_t_time(t):
 
 # 4)------------------------------------------------------------------------------
 # Write an algorithm that calculates all even and two-digit numbers
-def zouj(a, b):
+def zouj(a, b): 
     list_zouj = []
     for num in range(a, b + 1):
-        if (num % 2 == 0)& (10<=num<=99):
+        if (num % 2 == 0) and(10<=num<=99):
             list_zouj.append(num)
     return list_zouj
 
 # print(zouj(10, 1000))
 
+
+# 5)------------------------------------------------------------------------------
+# Write an algorithm that receives a natural number n
+# and calculates and prints all odd numbers smaller than or equal to it.
+
+def calculate(n):
+    num_list = []
+    for num in range(n + 1):
+        if num % 2 != 0:
+            num_list.append(num)
+    return num_list
+
+
+# print(calculate(8)) #[1, 3, 5, 7]
+
+# 6)------------------------------------------------------------------------------
+# Write an Algorithm that returns all even numbers between 1000 and 2000,
+# prints each one, and also prints the total sum of them.
+
+def calculator():
+    start = 1000
+    end = 2000
+    total = 0
+
+    for num in range(start, end + 1):
+        if num % 2 == 0:
+            print(num)
+            total += num
+
+    print("Total sum:", total)
+
+
+# calculator() #answer:751500
+
+# 7)------------------------------------------------------------------------------
+# Write an algorithm that:
+# Gets a natural number N (like 5, 7, or 10) from the user,
+# Then calculates the sum of this series:
+#S=1/2+1/3+/4+...+1/N
+
+
+def sum_num(n):
+    s=0
+    for num in range(1,n+1):
+        s+=1/num
+    print(s)
+    
+# sum_num(7)  #2.59!
+
+# 8)------------------------------------------------------------------------------
+#Write an algorithm that takes a natural number n and calculates and prints the following sum:
+def sum_even(n):
+    s=0
+    for num in range(1,n+1):
+        if num%2==0:
+            s+=1/num
+    print(s)
+    
+# sum_even(8) #1.0416666666666665
+# 9)------------------------------------------------------------------------------
+# Write an algorithm that takes a natural number n and calculates and prints the following sum:
+#s=1/3**1+2/3**2+3/3**3+..+n/3**n
+def calculator(n):
+    s=0
+    for num in range(1,n+1):
+        s+=num/3**num
+    print(s)
+
+# calculator(4) #0.7160493827160495
+
+# 10)------------------------------------------------------------------------------
+#Write an algorithm that takes 3 numbers a, b, and c, and checks if you can make a triangle with these numbers or not.
