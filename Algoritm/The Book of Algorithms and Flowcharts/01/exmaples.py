@@ -143,3 +143,138 @@ def calculator(n):
 
 # 10)------------------------------------------------------------------------------
 #Write an algorithm that takes 3 numbers a, b, and c, and checks if you can make a triangle with these numbers or not.
+# first of all we need to understand what is the formula ! lol lemme think and back in school in my imagananition!
+#ohhh the book a bit remindered me lol!
+
+#shart:
+#a+b=>c
+#b+c=>a
+#a+c=>b
+
+
+def is_triangle(a,b,c):
+    if (a+b>c and b+c>a and a+c>b):
+        print("yes it can")
+    else:
+        print("no it can't")
+        
+# 11)------------------------------------------------------------------------------
+# Write an algorithm that takes 3 numbers a, b, and c (the sides of a triangle) and checks if the triangle is a right-angled triangle or not.
+
+def right_angled_triangle(a, b, c):
+    if ((a**2)+(b**2) == c**2 or (b**2)+(c**2) == (a**2) or (a**2)+(c**2) == (b**2)):
+        print("yes it can")
+    else:
+        print("no it can't")
+        
+# 12)------------------------------------------------------------------------------
+# Write an algorithm that takes 100 numbers one by one, prints each number, and at the end, prints the sum of all the numbers.
+## my brain didn't get this :/ that's why dear AI helped me ! it was too simple damn how I couldn't get it!
+
+
+S = 0  # متغیر جمع اعداد
+I = 1  # شمارنده حلقه
+
+while I <= 100:  # حلقه برای 100 
+    a = float(input(f" give me your number! {I}   : "))  # گرفتن  از کاربر
+    print("the entered number :", a)  # چاپ 
+    S = S + a  # جمع  با جمع قبلی
+    I = I + 1  # افزایش شمارنده
+
+# print("total:", S)
+
+# 13)------------------------------------------------------------------------------
+# Write an algorithm that takes two numbers, A and B, as input. Find and print the biggest number and the smallest number.
+# (If A and B are equal, ask for two new numbers.)
+# We will solve this problem in two different ways.
+
+def calculate(a, b):
+    if a != b:
+        if a > b:
+            print(f"A ({a}) is bigger and B ({b}) is smaller")
+        else:
+            print(f"B ({b}) is bigger and A ({a}) is smaller")
+    else:
+        print("A and B are equal, please enter two new numbers.")
+        a = float(input("Enter A again: "))
+        b = float(input("Enter B again: "))
+        calculate(a, b)
+        
+
+# 14)------------------------------------------------------------------------------
+# Write the algorithm of Example 13 for three numbers, but this time only print the biggest number.
+# (Assume that the three numbers are not all equal.)
+
+a = float(input("Enter A : "))
+b = float(input("Enter B : "))
+c = float(input("Enter C : "))
+
+
+def compare_function(a, b, c):
+    if (a != b and b != c and c != a):
+        print(max(a, b, c))
+    else:
+        a = float(input("Enter A again: "))
+        b = float(input("Enter B again: "))
+        c = float(input("Enter C again: "))
+        compare_function(a, b, c)
+
+
+# compare_function(a, b, c)
+
+# 15)------------------------------------------------------------------------------
+# Write an algorithm that takes a positive whole number as input and checks if the number is even or odd.
+
+def number_odd_or_even(n):
+    if (n % 2 == 0):
+        print("the number is even")
+    else:
+        print("the number is odd")
+
+
+# number_odd_or_even(3)
+# number_odd_or_even(4)
+
+# 16)------------------------------------------------------------------------------
+# Write an algorithm that takes a natural number N as input and :
+# Finds all the divisors of N.
+# Counts how many divisors there are.
+# Calculates the sum of all divisors.
+# Prints the results.
+n = int(input("give me the number:"))
+print(n)
+
+
+def find_divisor(n):
+    total = 0
+    divisors = []
+    for num in range(1, n+1):
+        if n % num == 0:
+            total += num
+            divisors.append(num)
+    print("total:", total, "divisors:", divisors)
+
+
+# find_divisor(n)
+# 17)------------------------------------------------------------------------------
+# Write an algorithm that takes a natural number N as input and checks if it is a perfect number or not .
+# Explanation:
+# A natural number N is called perfect if the sum of its divisors smaller than N is equal to N itself.
+n = int(input("enter the number:"))
+
+def is_perfect(num):
+    total = 0
+    for n in range(1, num):
+        if num % n == 0:
+            total += n
+    if total == num:
+        print("yes this is a perfect number")
+    else:
+        print("no it is not")
+
+
+# is_perfect(n)
+# 18)------------------------------------------------------------------------------
+# Write an algorithm that takes a natural number N as input and checks if it is a prime number or not .
+# Definition of a prime number:
+# A natural number N is called prime if it has no divisors other than 1 and itself.
