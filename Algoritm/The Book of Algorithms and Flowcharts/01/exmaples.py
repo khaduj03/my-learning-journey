@@ -278,3 +278,189 @@ def is_perfect(num):
 # Write an algorithm that takes a natural number N as input and checks if it is a prime number or not .
 # Definition of a prime number:
 # A natural number N is called prime if it has no divisors other than 1 and itself.
+n=int(input("Enter the number:"))
+
+def prime_number(n):
+    if n<=1:
+        print("no it is not")
+        return
+    for i in range(2,n):
+        if n % i == 0:
+            print("no it is not")
+            return
+    print("yes it is")
+
+# prime_number(n)
+
+
+# 19)------------------------------------------------------------------------------
+# Write an algorithm that takes a natural number N as input and calculates its factorial.
+# Assume that N is a natural number.
+# The factorial of N is written as N! and its value is found like this:
+
+# If N = 0 → N! = 1
+# If N = 1 → N! = 1
+# If N ≠ 0, 1 → N! = N × (N – 1) × (N – 2) × ... × 3 × 2 × 1
+
+n = int(input("Enter the number:"))
+
+
+def factorial(n):
+    fact = 1
+    if n == 1 or n == 0:
+        print("1 factorial ==", 1)
+        return
+    for i in range(1, n+1):
+        fact *= i
+    print(f"{n}! == {fact}")
+
+
+factorial(n)
+
+# 20)------------------------------------------------------------------------------
+# Example 21:
+# Write an algorithm that takes a natural number N as input and calculates and prints the following sum:
+# S = 1! + 2! + 3! + ... + N!
+n = int(input("Enter the number: "))
+
+
+def factorial(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact *= i
+    return fact
+
+
+def sum_factorial(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += factorial(i)
+    print(f"The sum of factorials from 1! to {n}! is: {total}")
+
+
+# sum_factorial(n)
+
+# 21)------------------------------------------------------------------------------
+# Write an algorithm that shows(prints) all divisors of every number between 2 and 500, separately for each number.
+def divisors(n):
+    divis = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            divis.append(i)
+    print(f"{n} = {divis}")
+
+
+def all_divisors():
+    for i in range(2, 500+1):
+        divisors(i)
+
+
+# all_divisors()
+# 22)------------------------------------------------------------------------------
+# Suppose today is day R of month number M.
+# Write an algorithm that asks for R and M and then finds out what day number of the year it is .
+# (R and M are whole numbers.)
+which_day = int(input("Enter the day:"))
+which_month = int(input("Enter the month count number:"))
+
+
+def determine_the_day(d, m):
+    months_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    total_days = 0
+    for i in months_days[:m-1]:
+        total_days += i
+    print(total_days+d)
+
+
+# determine_the_day(which_day, which_month)
+
+# 23)------------------------------------------------------------------------------
+# Write an algorithm that takes a positive even number N as input and calculates the following sum:
+# S = 1/2 - 2/3 + 3/4 - 4/5 + ... + (N-1)/N
+
+
+# i got a bit confustion about it 🙄
+n = int(input("Enter an even number: "))
+
+
+def even_number_sum(n):
+    total = 0
+    for i in range(1, n):
+        if i % 2 == 1:
+            total += i / (i + 1)
+        else:
+            total -= i / (i + 1)
+    print(total)
+
+
+# even_number_sum(n)
+
+# 24)------------------------------------------------------------------------------
+# Write an algorithm that takes two positive integers M and N,
+# and then finds and prints:
+# Their Greatest Common Divisor(GCD) — the biggest number that divides both numbers.
+# Their Least Common Multiple(LCM) — the smallest number that both can divide exactly.
+
+# To find the GCD, we use the Euclidean method:
+# Divide the bigger number by the smaller number.
+# If the remainder is 0, the smaller number is the GCD.
+# If not, take:
+# the smaller number → as the new bigger number,
+# the remainder → as the new smaller number,
+# and repeat the process.
+# Continue until the remainder becomes 0.
+# The last divisor that made remainder 0 is the GCD.
+# To find the LCM, we use this formula:
+
+#LCM * GCD = M*N
+#LCM=(M*N)/GCD
+
+# My approach 🤕 vs AI's approach 
+m = int(input("enter the number m:"))
+n = int(input("enter the number n:"))
+
+
+def divisors(n):
+    list_divis = []
+    for i in range(1, n+1):
+        if n % i == 0:
+            list_divis.append(i)
+    return list_divis
+
+
+def GCD_LCM(n, m):
+    gn = divisors(n)
+    gm = divisors(m)
+    same = []
+    for a in gn:
+        for b in gm:
+            if a == b:
+                same.append(a)
+    gcd = max(same)
+    lcd = (n*m)//gcd
+
+    print(F"GCD:{gcd} LCM: {lcd}")
+
+
+
+# GCD_LCM(n, m)
+
+#Ai:
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+def lcm(a, b):
+    return (a * b) // gcd(a, b)
+
+
+m = int(input("Enter M: "))
+n = int(input("Enter N: "))
+
+print(f"GCD: {gcd(m, n)} | LCM: {lcm(m, n)}")
+
+# 25)------------------------------------------------------------------------------
+# Write an algorithm that takes a natural number(N) as input and then finds and prints:
+# 1 The number of digits in N
+# 2 The sum of all its digits
