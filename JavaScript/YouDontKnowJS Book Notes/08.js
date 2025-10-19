@@ -103,32 +103,60 @@ mathHomework.study(); // Please study Math
 // - A function closed over scope can only access that scope
 // - A function using dynamic this can flexibly operate with different objects
 //----------------------------------------------------------------------------
-// Pillar 1: Scope and Closure
-// 1. Scope :Scope decides where a variable can be accessed.
-// Think of scope like buckets, and variables as marbles inside the buckets. You can only see the marbles in your bucket or in outer buckets, not in inner ones.
-// JavaScript uses lexical scope, meaning where you write a function decides what variables it can access, not where you call it.
-
-// 2. Hoisting and var/let/const
-// Variables declared with var are hoisted to the top of their function and function-scoped.
-// Variables declared with let and const are block-scoped, and cannot be used before they are defined (this is called Temporal Dead Zone or TDZ).
-
-// 3. Closure : A closure happens when a function remembers variables from its outer scope, even if it runs somewhere else.
-// Closures let functions keep private variables, preserve data across calls, and are used a lot in modules and callbacks.
-
-// Example:
-function outer() {
-  let msg = "Hello";
-  return function inner() {
-    console.log(msg);
-  };
-}
-
-const sayHello = outer();
-sayHello(); // Prints: "Hello"
+// Scope → Tells where you can use a variable.
+// Lexical Scope → Scope is decided when you write the code, not when it runs.
+// Hoisting → JS moves variable names to the top before running.
+// Function Scope → var works only inside a function.
+// Block Scope → let and const work inside { } blocks.
+// TDZ (Temporal Dead Zone) → You can’t use let or const before declaring them.
+// Closure → A function remembers variables from its outer scope, even after that scope is closed.
+// Why Closure is Important → Helps make private and organized code (modules).
 
 
-// Even after outer() finishes, inner() remembers msg.
+// Pillar 2: Prototypes
+// In JavaScript, you can make objects directly — you don’t always need classes.
+// Prototype is a system that lets objects connect and share behavior.
+// Two objects can work together through something called behavior delegation.
+// Delegation means one object uses another object’s functions.
+// This is different from class inheritance, where one class copies from another.
+// Prototypes and delegation are natural and powerful in JavaScript.
 
-// Key Points
-// Scope = decides which variables are visible.
-// Closure = functions can remember outer variables.
+// Pillar 3: Types and Coercion
+// Every value in JS has a type (like number, string, boolean, etc.).
+// Coercion means JS can change one type to another automatically.
+// Example: "5" * 2 → 10 (string turned into number).
+// Many developers use TypeScript or Flow to control types.
+// But you should still understand how JS types really work.
+// Without knowing types and coercion, your JS foundation is weak.
+
+
+// Read books in this order:
+// Book 1: Get Started → learn JS basics.
+// Book 2: Scope & Closures → learn scope and closure.
+// Book 3: Objects & Classes → learn this, prototype, class.
+// Book 4: Types & Grammar → learn data types and rules.
+// Book 5: Sync & Async → learn time control (now & later).
+// Book 6: ES.Next & Beyond → learn new future JS features.
+//  Books 2–4 can be read in any order.
+//  Don’t skip any book — each is important.
+//  Book 5 can be read later if it feels hard.
+//  Practice a lot! The best way to learn code is writing it yourself.
+
+
+// Primitive vs Object:
+// Primitive → copied by value.
+// Object → copied by reference (share same object).
+
+// Function forms:
+// Anonymous, Named, Arrow, IIFE, Async, Generator.
+// Name functions for clarity; avoid too many anonymous functions.
+
+
+// Conditional coercion:
+// JS converts values to Boolean in if, while, ? statements.
+// Learn coercion to avoid mistakes.
+
+// Prototypal classes:
+// Old style: use function + prototype.
+// Modern style: use ES6 class.
+// Both create linked objects, but class is cleaner.
