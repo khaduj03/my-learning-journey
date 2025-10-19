@@ -464,3 +464,67 @@ print(f"GCD: {gcd(m, n)} | LCM: {lcm(m, n)}")
 # Write an algorithm that takes a natural number(N) as input and then finds and prints:
 # 1 The number of digits in N
 # 2 The sum of all its digits
+
+n = input("Enter number:")
+
+
+def digits(n):
+    ln = 0
+    total = 0
+    for a in str(n):
+        ln += 1
+        total += int(a)
+
+    print(ln)
+    print(total)
+
+
+# digits(n)
+
+# 26)------------------------------------------------------------------------------
+# Write an algorithm that takes a number in base 2 (binary) and converts it to its base 10 (decimal) equivalent.
+# Explanation:
+# Because the digits of a binary number are only 0 and 1,
+# we need to take each digit, multiply it by powers of 2,
+# and then add them all together to get the decimal number.
+# To get each digit of the binary number,
+# you can use the same method as in Example 26 (dividing by 10 and taking remainders).
+binary = input("Enter the number:")
+
+
+def decimal_converter(n):
+    number = 0
+    for idx, a in enumerate(reversed(n)):
+        number += int(a)*(2**idx)
+    print(number)
+
+
+# decimal_converter(binary)
+
+# 27)------------------------------------------------------------------------------
+# Write an algorithm that reads N numbers one by one and finds and prints the largest number among them.
+num = ""
+nums = []
+
+while num != "end":
+    num = input("Enter a number (type 'end' when finished): ")
+
+    if num != "end":
+        nums.append(int(num))
+
+
+def big_number(numbers):
+    print("The biggest number is:", max(numbers))
+
+
+# big_number(nums)
+# 28)------------------------------------------------------------------------------
+# Write an algorithm that takes the name, work hours, and hourly wage of employees as input and calculates and prints their salary.
+
+# If the number of work hours is more than 50, the extra hours should be calculated as overtime.
+# Variables:
+# M: number of employees
+# N: employee name
+# H: work hours
+# HS: hourly wage
+# S: total salary
