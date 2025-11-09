@@ -149,4 +149,4 @@ means “take the value of B, add 1, and store the result in C”.
 
 
 
-khaduj let's go and solve problems with python and js lol 😎
+khaduj let's go and solve problems with python lol 😎
