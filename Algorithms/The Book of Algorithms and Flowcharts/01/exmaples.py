@@ -889,6 +889,60 @@ def even_number_sum(n):
 #LCM * GCD = M*N
 #LCM=(M*N)/GCD
 
+# 1. start
+# 2. get the N ,M
+# 3. I ← 1 GCD ← 0
+# 4. RN ← N mod I and RM ← M mod I
+# 5. if RN = 0 and RM = 0 then GCD ← I
+# 6. if GCD< I then GCD ← I
+# 7. I ← I + 1
+# 8. if I <= N go to line 4 otherwise line 9
+# 9. LCM ← (N * M) / GCD
+# 10. print GCD , LCM end
+
+
+##dry run(N=6,M=12):
+#-------------------------------------------
+# | I | RN = N mod I | RM = M mod I | GCD (after update) |
+# | - | ------------ | ------------ | ------------------ |
+# | 1 | 0            | 0            | 1                  |
+# | 2 | 0            | 0            | 2                  |
+# | 3 | 0            | 0            | 3                  |
+# | 4 | 2            | 0            | 3                  |
+# | 5 | 1            | 2            | 3                  |
+# | 6 | 0            | 0            | 6                  |
+#-------------------------------------------
+# Loop ends → GCD = 6
+# LCM = (6 * 12) / 6 = 12
+
+## oops AI said this algorithm is too solow for big numbers so it used another approach !
+
+## another aprouch!
+
+# 1. start
+# 2. get the N ,M
+# 3. while M ≠ 0 do:
+#       R ← N mod M
+#       N ← M
+#       M ← R
+# 4. GCD ← N
+# 5. LCM ← (original N * original M) / GCD
+# 6. print GCD , LCM end
+
+## dry run for big numbers (N=48,M=18):
+#-------------------------------------------
+# | N  | M  | R = N mod M | Action            |
+# | -- | -- | ----------- | ----------------- |
+# | 48 | 18 | 12          | N ← 18, M ← 12    |
+# | 18 | 12 | 6           | N ← 12, M ← 6     |
+# | 12 | 6  | 0           | N ← 6, M ← 0      |
+#-------------------------------------------
+# Loop ends → GCD = 6
+# LCM = (48 * 18) / 6 = 144
+
+
+
+
 
 # My approach 🤕 vs AI's approach 
 m = int(input("enter the number m:"))
@@ -940,6 +994,27 @@ print(f"GCD: {gcd(m, n)} | LCM: {lcm(m, n)}")
 # 1 The number of digits in N
 # 2 The sum of all its digits
 
+# 1. Start
+# 2. Get N
+# 3. I ← 0 , total ← 0
+# 4. While N ≠ 0 do
+#      R ← N mod 10
+#      total ← total + R
+#      I ← I + 1
+#      N ← N div 10
+# 5. Print I , total
+# 6. End
+
+
+##dry run(N=358):
+#-------------------------------------------------------
+#| start| N | R=N mod 10 | total=total+R| I | N=N div 10|
+#|------|---|------------|--------------|---|-----------|
+#|1     |358|     -      |     0        |0  | -         |
+#|2     |358| 8          | 0+8=8        |1  |35         |
+#|3     |35 | 5          |5+8=13        |2  |3          |
+#|0     |3  |3           |13+13=16      |3  |0          |
+#-------------------------------------------------------
 n = input("Enter number:")
 
 
@@ -964,9 +1039,32 @@ def digits(n):
 # and then add them all together to get the decimal number.
 # To get each digit of the binary number,
 # you can use the same method as in Example 26 (dividing by 10 and taking remainders).
+
+# 1. Start
+# 2. Get the Number (binary number → N)
+# 3. decimal ← 0 , power ← 0
+# 4. While N ≠ 0 do
+#      R ← N mod 10
+#      decimal ← decimal + R × (2 ^ power)
+#      power ← power + 1
+#      N ← N div 10
+# 5. Print decimal
+# 6. End
+
+
+##dry run
+#----------------------------------------------------------------------------------------
+# | Step | N    | R = N mod 10 | 2^power | R×2^power | decimal (sum) | power | N div 10 |
+# | ---- | ---- | ------------ | ------- | --------- | ------------- | ----- | -------- |
+# | 1    | 1011 | 1            | 1       | 1         | 1             | 1     | 101      |
+# | 2    | 101  | 1            | 2       | 2         | 3             | 2     | 10       |
+# | 3    | 10   | 0            | 4       | 0         | 3             | 3     | 1        |
+# | 4    | 1    | 1            | 8       | 8         | 11            | 4     | 0        |
+#----------------------------------------------------------------------------------------
+
+
+
 binary = input("Enter the number:")
-
-
 def decimal_converter(n):
     number = 0
     for idx, a in enumerate(reversed(n)):
@@ -978,6 +1076,28 @@ def decimal_converter(n):
 
 # 29)------------------------------------------------------------------------------
 # Write an algorithm that reads N numbers one by one and finds and prints the largest number among them.
+
+# 1. Start
+# 2. Get N  
+# 3. Get first number → Max ← that number
+# 4. I ← 2
+# 5. While I ≤ N do
+#       Get next number → X
+#       If X > Max then Max ← X
+#       I ← I + 1
+# 6. Print Max
+# 7. End
+
+#-----------------------------
+# | I | X | Max (after check) |
+# | - | - | ----------------- |
+# | 1 | 7 | 7                 |
+# | 2 | 2 | 7                 |
+# | 3 | 9 | 9                 |
+# | 4 | 4 | 9                 |
+# | 5 | 6 | 9                 |
+# -----------------------------
+
 num = ""
 nums = []
 
@@ -1004,6 +1124,22 @@ def big_number(numbers):
 # HS: hourly wage
 # S: total salary
 
+
+# 1. Start
+# 2. Get M  
+# 3. For I ← 1 to M do:
+#       Get N  
+#       Get H  
+#       Get HS 
+#       If H > 50 then
+#           overtime ← H - 50
+#           S ← (50 × HS) + (overtime × HS × 1.5)   
+#       Else
+#           S ← H × HS
+#       Print N , S
+# 4. End
+
+
 name = input("Enter your name: ")
 hrs = int(input("Enter the hours you worked: "))
 salary = int(input("Enter your salary per hour: "))
@@ -1029,6 +1165,27 @@ def the_salary(name, hrs, salary):
 # The old salary
 # The amount of increase
 # The new salary
+
+# 1. Start
+# 2. I ← 1
+# 3. Get S  (salary of employee I)
+# 4. If S ≤ 25000 go to line 7
+# 5. If S ≤ 35000 go to line 9
+# 6. Go to line 11
+# 7. increase ← S × 0.05
+# 8. Go to line 13
+# 9. increase ← S × 0.07
+# 10. Go to line 13
+# 11. increase ← S × 0.10
+# 12. Go to line 13
+# 13. new_salary ← S + increase
+# 14. Print "Old Salary:", S
+# 15. Print "Increase:", increase
+# 16. Print "New Salary:", new_salary
+# 17. I ← I + 1
+# 18. If I ≤ 500 go to line 3
+# 19. End
+
 s = int(input("Enter your current salary: "))
 
 def increase_salary(s):

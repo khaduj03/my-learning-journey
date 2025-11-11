@@ -1,1 +1,139 @@
-//--day-3---------------------------------------------------------------------
+
+------Descriptive Questions----------
+
+1.)-----------------------------------------------------------------------------
+Name three important factors for solving a problem and briefly explain each one.
+    1- we must understand very deep the problem
+    2- we should create plan to solve it!
+    3- and Analyzing the problem
+
+explaination:
+1-Look at the problem carefully. Know what data you have and what result you need.
+2-Think about the steps needed to solve the problem. Decide how to go from the given data to the answer.
+3-Figure out how to find the unknowns using the data you have. Break the problem into smaller parts if needed.
+
+
+2.)-----------------------------------------------------------------------------
+Take question 1 and apply it to a simple problem, then explain the different steps to solve it.
+
+for example : write an algorithm that takes A,B,C numbers and give the avarge
+so we start the first step  is it gave us three number and our data is A , B , C 
+and it want from us the avarge means our Unknown is the avarge
+
+the second step creating plan :
+
+1. start
+2. get the A , B , c
+3. S ← A + B + C div 3
+4. print S
+5. end
+
+the thirdht step is and Analyzing the algorithm:
+
+| A | B | C | avarge  |
+| 2 | 5 | 5 |2+5+5/3=4|
+
+the result is our Unknown (avarge)=4
+
+
+3.)-----------------------------------------------------------------------------
+Define logical thinking and illogical thinking.
+- logical :Understanding the problem, breaking it into small steps, and finding the unknown correctly.
+- illogical :Guessing the answer without thinking carefully or using steps.
+
+
+4.)-----------------------------------------------------------------------------
+Define an algorithm from the view of a machine.
+It receives some data (input).
+It produces one or more results (output).
+It performs comparison operations between data.
+It creates memory and stores data to help find unknown values.
+It performs mathematical or logical operations to solve the problem.
+
+
+5.)-----------------------------------------------------------------------------
+Give a definition of an algorithm that includes:
+exact language,
+enough details,
+order of steps,
+and clearly shows it can finish (terminate).
+
+
+An algorithm is a set of clear and ordered steps that solve a problem or perform a specific task. Each step is simple and understandable, and the algorithm has a start and an end, so it always finishes.
+
+6.)-----------------------------------------------------------------------------
+Explain why in writing algorithms we use ← (assignment) instead of =.
+In writing algorithms, we use ← (assignment) instead of = because:
+← clearly shows we are storing a value in a variable or memory location.
+= is usually used for comparison (to check if two values are equal) in programming languages.
+
+Using ← avoids confusion between assigning a value and checking equality.
+It makes the algorithm easier to read and understand, because it clearly indicates that we are saving or updating a value, not comparing values.
+
+
+7.)-----------------------------------------------------------------------------
+Explain the difference between a human and a machine in how they think.
+Humans:
+Humans think creatively and flexibly.
+They can understand emotions, context, and abstract ideas.
+They learn from experience, make mistakes, and improve over time.
+Human thinking is often slow but deep and adaptable.
+
+Machines (Computers/AI):
+Machines think logically and step by step.
+They can only follow rules and instructions given by humans.
+Machines cannot feel emotions or understand abstract ideas fully.
+They are very fast and can process huge amounts of data, but only in the ways they are programmed.
+
+
+8.)-----------------------------------------------------------------------------
+Fully explain what is meant by the executor (performer) of an algorithm.
+The executor (or performer) of an algorithm is a human, machine, or system that carries out the steps of the algorithm. 
+An algorithm itself is just a set of instructions or rules to solve a problem, and it cannot do anything on its own. 
+The executor is what actually performs these instructions.
+For example, when we write an algorithm, we create step-by-step instructions to solve a problem, like solving a puzzle. 
+The executor can be a human, a computer, or any device that can follow these instructions.
+The executor must understand each step and follow every step exactly, without skipping any. Humans can act as executors, 
+but they might make mistakes. Computers or machines can also be executors; they are usually fast and precise, but they can only follow the instructions that are given to them.
+In short, the algorithm is the plan, and the executor is the doer of the plan.
+
+9.)-----------------------------------------------------------------------------
+Define a counter in an algorithm executor and give an example.
+Definition of a Counter in an Algorithm Executor:
+A counter is a variable used by the executor (performer) of an algorithm to count how many times a step or action is performed. It is commonly used in loops to track repetitions and control when to stop.
+
+Example Algorithm: Print numbers from 1 to n
+
+1- start
+2- get the n
+3- i ← 1
+4- i ← i+1
+5- print i 
+6- if i<=n go to line 4
+7- end
+
+Explanation:
+Here, the counter i keeps track of how many numbers have been printed.
+Each time the loop runs, i increases by 1.
+The loop continues until i becomes greater than n.
+
+Key Point:
+A counter helps the executor repeat actions a specific number of times and ensures the algorithm stops correctly.
+
+10.)-----------------------------------------------------------------------------
+Write the meaning of each of the following expressions clearly:
+a) 3 × 2 → p
+Meaning:
+Multiply 3 by 2.
+Store the result in the variable p.
+
+b) A → S
+Meaning:
+Take the value of variable A.
+Store (assign) it into the variable S.
+
+c) (2 - W) + T → T
+Meaning:
+Subtract the value of W from 2.
+Add the value of T to the result.
+Store the final result back into T.
