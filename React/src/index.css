@@ -1,1 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, black;
+}
+/* now you can use Tailwind utility classes */

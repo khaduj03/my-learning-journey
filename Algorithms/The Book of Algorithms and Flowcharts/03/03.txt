@@ -1,0 +1,231 @@
+(1)--------------------------------------------------------------
+Which of the following is not considered a characteristic of an algorithm?
+a) Definite order
+b) Termination (it must end)
+c) Enough detail
+d) Assignment statements
+
+Answer:D
+(2)--------------------------------------------------------------
+The following algorithm displays the numbers from 10 to 20. Which option correctly completes line 5?
+1- start
+2- I ←9
+3- I ← I+1
+4- print the I 
+5-?
+6 end
+
+a) If I ≤ 20 then go to line 3
+b) If I < 20 then go to line 3
+c) If I ≥ 20 then go to line 3
+d) If I = 20 then go to line 3
+
+Answer:B
+
+| Step | I  | Action      | Output |
+| ---- | -- | ----------- | ------ |
+| 2    | 9  | I ← 9       | -      |
+| 3    | 10 | I ← I+1     | -      |
+| 4    | 10 | print I     | 10     |
+| 5    | 10 | 10<20 → yes | loop   |
+| 3    | 11 | I ← I+1     | -      |
+| 4    | 11 | print I     | 11     |
+| 3    | 12 | I ← I+1     | -      |
+| 4    | 12 | print I     | 12     |
+| …    | …  | …           | …      |
+| 4    | 20 | print I     | 20     |
+| 5    | 20 | 20<20? no   | end    |
+
+
+(3)--------------------------------------------------------------
+After executing the following algorithm, what are the output numbers?
+1-Start
+2-X ← 5
+3-Y ← X + 5
+4-If Y ≤ X then go to line 5; otherwise, print X and Y
+5-X ← X + 2
+6-Y ← Y - 3
+7-Go to line 4
+
+a) 10 and 15
+b) 13 and 13
+c) 16 and 11
+d) 13 and 12
+
+Answer: None of them
+
+Step 2: X=5
+Step 3: Y=X+5 → Y=10
+Step 4: Y≤X? 10≤5 → No → print X,Y → Output: 5, 10
+The loop never executes again because it goes to 5 only if Y≤X, which is false.
+
+(4)--------------------------------------------------------------
+Which of the following describes the function of the following algorithm?
+1- start
+2- Read X
+3- If X < 0 then X ← -X
+4- print X and end 
+
+
+a) It receives a number and writes its integer part.
+b) It receives a number and writes its absolute value.
+c) It receives a number and, if it is negative, prints it.
+d) It receives a number and prints it exactly as it is
+
+Answer: B
+
+X = 7 → X<0? No → print 7
+X = -5 → X<0? Yes → X=-(-5)=5 → print 5
+
+(5)--------------------------------------------------------------
+How many inputs and outputs does the following algorithm have?
+1-start
+2-get the A 
+3-print the A 
+4-I ← 12
+5- get the N 
+6- print N+1 
+7- I ← I+1
+8-if I=2 go to line 4
+9- print A * A
+10- end 
+
+
+a) 11 inputs and 12 outputs
+b) 7 inputs and 9 outputs
+c) 2 inputs and 3 outputs
+d) 13 inputs and 15 outputs
+
+Answer: C 
+
+Inputs: A and N → 2 inputs
+Outputs: print A, print N+1, print A*A → 3 outputs
+
+(6)--------------------------------------------------------------
+What is the output of the following algorithm?
+
+1- Start
+2- Z ← √2
+3- I ← 1
+4- Z ← √(Z + 2)
+5- I ← I + 1
+6- If I ≤ 4 then go to line 4
+7- Write Z
+8- End
+
+a) √(2 + √(2 + √(2 + √2)))
+b) √(2 + √(2 + √(2 + √(2 + √2))))
+c) 4√2
+d) √(2 + √(2 + √(2 + √(2 + √2)))))
+
+Answer : A
+
+
+| Iteration | I value | Z calculation     | Z expanded                                 |
+| --------- | ------- | ----------------- | ------------------------------------------ |
+| 1         | 1       | Z ← √(Z + 2)      | Z = √(√2 + 2)                              |
+| 2         | 2       | Z ← √(Z + 2)      | Z = √( √(√2 + 2) + 2 )                     |
+| 3         | 3       | Z ← √(Z + 2)      | Z = √( √( √(√2 + 2) + 2 ) + 2 )            |
+| 4         | 4       | Z ← √(Z + 2)      | Z = √( √( √( √(√2 + 2) + 2 ) + 2 ) + 2 )   |
+| End       | 5       | I > 4 → stop loop | Z = √(2 + √(2 + √(2 + √2))) (final output) |
+
+Loop stops after I=4 → Z = √(2 + √(2 + √(2 + √2)))
+
+(7)--------------------------------------------------------------
+In the following algorithm, determine how many times the variable S is written (printed).
+
+1- Start
+2- N ← 3
+3- Read i and j
+4- S ← i + j
+5- Write S
+6- N ← N + 1
+7- If N ≤ 6 then go to line 3
+8- End
+
+a) 6
+b) 3
+c) 4
+d) 7
+
+Answer :C
+
+| Loop | N before loop | Output S |
+| ---- | ------------- | -------- |
+| 1    | 3             | S1       |
+| 2    | 4             | S2       |
+| 3    | 5             | S3       |
+| 4    | 6             | S4       |
+
+(8)--------------------------------------------------------------
+In the following algorithm, determine how many times the counter N is repeated (looped).
+
+1- Start
+2- N ← 0
+3- Read i and j
+4- S ← i + j
+5- Write S
+6- N ← N + 2
+7- If N < 7 then go to line 3
+8- End
+
+a) 4
+b) 7
+c) 3
+d) 5
+
+Answer: A
+
+| Loop | N value | Condition N<7 | Loop? |
+| ---- | ------- | ------------- | ----- |
+| 1    | 0       | 0<7 → yes     | yes   |
+| 2    | 2       | 2<7 → yes     | yes   |
+| 3    | 4       | 4<7 → yes     | yes   |
+| 4    | 6       | 6<7 → yes     | yes   |
+| 5    | 8       | 8<7 → no      | stop  |
+
+(9)--------------------------------------------------------------
+In the following algorithm, determine how many times the counter N is repeated (looped).
+
+1- Start
+2- Read i, j, and N
+3- S ← i + j
+4- Write S
+5- N ← N + 2
+6- If N < 7 then go to line 2
+7- End
+
+a) 5
+b) 0
+c) 3
+d) Unknown
+
+Answer: D
+N is read from input, so the number of loop iterations depends on the input value.
+
+(10)--------------------------------------------------------------
+In the following algorithm, which option should replace line 4 so that the sum below is stored in S?
+
+S = 1 + 3 + 5 + ... + 99
+
+1- Start
+2- S ← 0
+3- I ← 1
+4- ?
+5- I ← I + 2
+6- If I ≤ 99 then go to line 4
+7- Write S
+8- End
+
+a) S ← I
+b) I ← S
+c) I ← I + S
+d) S ← S + I
+
+Answer: D
+
+I=1 → S = S+I = 0+1 → S=1
+I=3 → S = 1+3 = 4
+I=5 → S = 4+5 = 9
+… until I=99 → sum of all odd numbers
+Line 4 should be: S ← S + I
